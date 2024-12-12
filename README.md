@@ -1,3 +1,22 @@
+# Projet "CREER LE SITE TROUVE TON ARTISAN AVEC "REACT.JS""
+
+## Prérequis
+- Node.js 
+- npm 
+- React-router-dom via la commande npm install react-router-dom 
+- Installer web-vitales avec la commande npm install web-vitals
+
+
+- Boostrap via la commande npm install react-bootstrap bootstrap
+- Installer les icones Bootstrap avec npm install bootstrap-icons
+- Installer les icones React avec la commande npm install react-icons
+- Installer SASS avec la commande npm install -g sass
+
+npm install react-router-dom
+
+MEMO à retirer après transformation scss en css : commande "sass src/main.scss src/main.css"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
