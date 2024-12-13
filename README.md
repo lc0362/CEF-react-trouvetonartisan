@@ -19,9 +19,13 @@
         npm install -g sass
         npm i tailwindcss postcss-cli autoprefixer -D
         npx tailwind init --full
-- Installer Tailwind avec les commandes :
+- Installer Tailwind et ses icones avec les commandes :
         npm install -D tailwindcss
         npx tailwindcss init
+        npm install -D tailwindcss postcss autoprefixer
+        npm install @headlessui/react @heroicons/react
+        npm install react-icons@latest
+
 
 npm install react-router-dom
 

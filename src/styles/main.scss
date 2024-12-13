@@ -1,5 +1,8 @@
-@use './tailwind';
-@use './App';
-@use './components/Header';
-@use './components/Footer';
-@use './pages/Home';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './App.scss';
+@import './components/Header.scss';
+@import './components/Footer.scss';
+@import './pages/Home.scss';

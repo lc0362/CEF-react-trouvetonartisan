@@ -1,5 +1,4 @@
-
-
+@import  './variables.scss';
 
 @font-face {
   font-family: 'Graphik';
@@ -19,26 +18,13 @@
        url('../fonts/Graphik-Bold-Trial.otf') format('opentype');
 }
 
-:root {
-  --color-primary: #0074c7;
-  --color-secondary: #00497c;
-  --color-white: #f1f8fc;
-  --color-dark: #384050;
-  --color-accent: #cd2c2e;
-  --color-valid: #82b864;
-}
+
 
 .App {
-  font-family: 'Graphik', Arial, sans-serif; 
+  font-family: 'Graphik', Arial, sans-serif;
   cursor: default;
-  
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Graphik-Bold", sans-serif;
-  } 
-  
+    font-family: 'Graphik-Bold', sans-serif;
+  }
 }
-
-Link {
-  font-family: 'Graphik-Italic', Arial, sans-serif;
-}
-
