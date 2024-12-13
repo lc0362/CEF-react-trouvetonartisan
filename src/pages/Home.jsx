@@ -8,6 +8,8 @@ const Home = () => {
       <p>
         Les meilleurs artisans dans ta région.
       </p>
+      <div className=" text-white p-4">Test Tailwind!</div>
+
     </div>
   );
 };
