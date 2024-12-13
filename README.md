@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Projet "CREER LE SITE TROUVE TON ARTISAN AVEC "REACT.JS""
 
 ## Prérequis
@@ -30,7 +28,6 @@ npm install react-router-dom
 MEMO à retirer après transformation scss en css : commande "sass src/main.scss src/main.css"
 
 
->>>>>>> c0485c2 (installation tailwind)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

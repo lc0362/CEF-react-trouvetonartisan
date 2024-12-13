@@ -4,16 +4,18 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "postcss": "^8.4.49",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:css": "postcss src/styles/tailwind.scss -o src/styles/index.scss "
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

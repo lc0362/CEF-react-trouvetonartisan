@@ -1,7 +1,5 @@
-@import './tailwind';
-@import './index';
-@import './App';
-@import './components/Header';
-@import './components/Footer';
-@import './pages/Home';
-
+@use './tailwind';
+@use './App';
+@use './components/Header';
+@use './components/Footer';
+@use './pages/Home';

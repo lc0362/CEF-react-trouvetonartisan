@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../styles/components/Header.scss';
 
 const Header = () => {
@@ -9,9 +8,6 @@ const Header = () => {
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
-       
-          
-          
         </ul>
       </nav>
     </header>
