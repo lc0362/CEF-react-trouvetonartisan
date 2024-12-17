@@ -11,17 +11,17 @@ const Home = () => {
   return (
     <>
      <div style={{ backgroundColor: 'var(--color-secondary)' }} className="text-white pt-8">
-  <div className="max-w-lg mx-auto md:max-w-[850px] p-5">
+  <div className="max-w-lg mx-auto md:max-w-[800px] p-5">
     <div className="md:flex md:items-center md:space-x-5">
-      <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:px-2 md:max-w-[350px]
-      ">
+      <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px]">
         Comment trouver mon artisan ?
       </h1>
-      <div className="space-y-5 text-left md:text-lg">
-        <p className="flex items-center">
+      <div className="space-y-5 text-left ">
+        <p className="flex items-center
+        ">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
           >
             1
           </span>
@@ -30,7 +30,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
           >
             2
           </span>
@@ -39,7 +39,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
           >
             3
           </span>
@@ -48,7 +48,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
           >
             4
           </span>
@@ -66,64 +66,83 @@ const Home = () => {
       </div>
 
       <div className="mx-auto max-w-[900px]">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-5">
+        <div className="max-w-7xl mx-auto px-10 lg:px-0
+         ">
+          <div className="mb-5 lg:pl-20
+          ">
             <div>
               <VscDash className="dash text-7xl" style={{ color: 'var(--color-primary)' }} />
             </div>
             <h1 className="text-xl" style={{ color: 'var(--color-secondary)' }}>Artisans du mois</h1>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-            {topArtisans.map((artisan) => {
-              const departement = departementsData[artisan.location];
+          <div className="flex flex-wrap gap-10
+           md:gap-2
+            transition-all duration-30
+           text-center justify-center 
+          ">
+  {topArtisans.map((artisan) => {
+    const departement = departementsData[artisan.location];
 
-              return (
-                <div
-                  key={artisan.id}
-                  style={{ backgroundColor: 'var(--color-white)' }}
-                  className="text-dark p-6 border border-transparent transition-all duration-300 group relative"
-                >
-                  <h2
-                    className="text-lg mb-2"
-                    style={{ color: 'var(--color-secondary)' }}
-                  >
-                    {artisan.name}
-                  </h2>
-                  <p className="mb-2">
-                    <strong>{artisan.note}</strong> <Rating note={artisan.note} />
-                  </p>
-                  <p className="mb-2">
-                    <strong>{artisan.specialty}</strong>. {artisan.about}
-                  </p>
-                  <p>
-                    <strong>{artisan.location}</strong>
-                    {departement && ` (${departement})`}
-                  </p>
+    return (
+      <div
+      key={artisan.id}
+      style={{ backgroundColor: 'var(--color-white)' }}
+      className="text-dark p-6 transition-all duration-300 group relative basis-full lg:basis-[32%]
+      hover:outline-[var(--color-primary)] 
+      outline-none
+      hover:outline
+      hover:outline-4 
+       hover:cursor-pointer"
+    >
+      <h2
+        className="text-lg mb-2"
+        style={{ color: 'var(--color-secondary)' }}
+      >
+        {artisan.name}
+      </h2>
+      <p className="mb-3 
+      ">
+        <strong>{artisan.note}</strong> <Rating note={artisan.note} />
+      </p>
+      <p className="mb-3 lg:text-sm md:px-20 lg:px-0
+      ">
+        <strong>{artisan.specialty}</strong>. {artisan.about}
+      </p>
+      <p className="mb-3 lg:text-sm">
+        <strong>{artisan.location}</strong>
+        {departement && ` (${departement})`}
+      </p>
+    
+      {/* Icône flèche */}
+      <span
+        className="flex justify-center mt-4 transition-transform duration-300 group-hover:scale-125 group-hover:text-[var(--color-secondary)]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={4}
+          stroke="currentColor"
+          className="w-4 h-4 mt-6"
+          style={{ color: 'var(--color-primary)' }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+          />
+        </svg>
+      </span>
+    </div>
+    
 
-                  {/* Icône flèche */}
-                  <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:text-[var(--color-secondary)]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+    );
+  })}
+</div>
 
-          <div className="my-8 text-center">
+
+          <div className="my-5 text-center">
             <button
               style={{ backgroundColor: 'var(--color-primary)' }}
               className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
