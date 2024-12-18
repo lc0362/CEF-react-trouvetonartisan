@@ -9,7 +9,7 @@ const Footer = () => {
           <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
         </div>
         <div className="mx-auto max-w-[900px] lg:max-w-[1100px] px-10">
-          <div className="flex flex-col lg:flex-row lg:gap-x-36">
+          <div className="flex flex-col  lg:flex-row lg:gap-x-36">
 
         <Link to="/" className="flex items-center lg:place-items-start">
           <img 
