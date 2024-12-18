@@ -11,9 +11,9 @@ const Home = () => {
   return (
     <>
      <div style={{ backgroundColor: 'var(--color-secondary)' }} className="text-white pt-8">
-  <div className="max-w-lg mx-auto md:max-w-[800px] p-5">
-    <div className="md:flex md:items-center md:space-x-5">
-      <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px]">
+  <div className="max-w-lg mx-auto md:max-w-[800px] p-5 ">
+    <div className="md:flex md:items-center md:space-x-5 ">
+      <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px] ">
         Comment trouver mon artisan ?
       </h1>
       <div className="space-y-5 text-left ">
@@ -96,16 +96,15 @@ const Home = () => {
        hover:cursor-pointer"
     >
       <h2
-        className="text-lg mb-2"
+        className="text-lg mb-2 transition-transform duration-200 group-hover:scale-110"
         style={{ color: 'var(--color-secondary)' }}
       >
         {artisan.name}
       </h2>
-      <p className="mb-3 
-      ">
+      <p className="mb-3  ">
         <strong>{artisan.note}</strong> <Rating note={artisan.note} />
       </p>
-      <p className="mb-3 lg:text-sm md:px-20 lg:px-0
+      <p className="mb-3 lg:text-sm md:px-20 lg:px-0 
       ">
         <strong>{artisan.specialty}</strong>. {artisan.about}
       </p>
@@ -116,7 +115,7 @@ const Home = () => {
     
       {/* Icône flèche */}
       <span
-        className="flex justify-center mt-4 transition-transform duration-300 group-hover:scale-125 group-hover:text-[var(--color-secondary)]"
+        className="flex justify-center mt-4 transition-transform duration-200 group-hover:scale-125"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
