@@ -7,14 +7,14 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white mx-auto max-w-[900px] py-5">
-      <div className="w-full px-4 py-2 flex items-center justify-between h-16">
+    <nav className="bg-white mx-auto max-w-[900px] py-5 px-10">
+      <div className="w-full py-2 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img 
             src="/Logo.png" 
             alt="Logo Trouve ton artisan" 
-            className="navbar-logo h-auto max-w-[200px]"
+            className="navbar-logo h-auto max-w-[250px]"
           />
         </Link>
 
@@ -26,20 +26,22 @@ function Header() {
             type="button"
             aria-label="Rechercher"
           >
-            <CiSearch style={{ color: 'var(--color-primary)' }} size={24} />
+            <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
           </button>
 
           {/* Menu burger */}
           <button
-            className="navbar-toggler border-none p-2 flex items-center"
+            className="navbar-toggler border-none flex items-center"
             type="button"
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <div className="icon-menu-container flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
               <HiMenuAlt2 
                 style={{ color: 'var(--color-primary)' }}
-                className="icon-burger text-3xl transform rotate-180" 
+                size={40}
+                className="transform rotate-180" 
+              
               />
               <span 
                 className="menu-text text-xs"
