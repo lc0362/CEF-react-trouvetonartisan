@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { CiSearch } from 'react-icons/ci';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isNotHomePage = location.pathname !== '/';
 
   return (
-    <nav className="bg-white mx-auto max-w-[900px] py-5 px-10">
+    <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5`}>
+    <nav className="bg-white mx-auto max-w-[900px] px-10 ">
       <div className="w-full py-2 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -107,6 +110,7 @@ function Header() {
         </ul>
       </div>
     </nav>
+    </div>
   );
 }
 
