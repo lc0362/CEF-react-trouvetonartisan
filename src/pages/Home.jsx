@@ -17,11 +17,11 @@ const Home = () => {
         Comment trouver mon artisan ?
       </h1>
       <div className="space-y-5 text-left ">
-        <p className="flex items-center
+        <p className="flex items-center 
         ">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
           >
             1
           </span>
@@ -30,7 +30,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
           >
             2
           </span>
@@ -39,7 +39,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
           >
             3
           </span>
@@ -48,7 +48,7 @@ const Home = () => {
         <p className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
           >
             4
           </span>
