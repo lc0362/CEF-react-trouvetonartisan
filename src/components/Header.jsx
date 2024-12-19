@@ -74,16 +74,16 @@ function Header() {
           {/* Liens de navigation desktop */}
           <ul className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm">
             <li className="nav-item">
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/batiment">Bâtiment</Link>
+              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
             </li>
             <li className="nav-item pl-5">
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/services">Services</Link>
+              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
             </li>
             <li className="nav-item pl-5">
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/fabrication">Fabrication</Link>
+              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
             </li>
             <li className="nav-item pl-5">
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/alimentation">Alimentation</Link>
+              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
             </li>
           </ul>
         </div>
@@ -93,16 +93,16 @@ function Header() {
       <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden w-full`} id="navbarNav">
         <ul className="navbar-nav flex flex-col items-start w-full py-2">
           <li className="nav-item">
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/batiment">Bâtiment</Link>
+            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/services">Services</Link>
+            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/fabrication">Fabrication</Link>
+            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/alimentation">Alimentation</Link>
+            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
           </li>
         </ul>
       </div>

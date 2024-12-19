@@ -18,7 +18,7 @@ const Footer = () => {
             className="h-auto max-w-[250px] py-3 "
           />
         </Link>
-        <div className='adresse      '>
+        <div className='adresse'>
             <strong className='py-3 lg:pt-3 block'>Lyon</strong>
              <address className="not-italic">101 cours Charlemagne <br />
                     CS 20033<br />
