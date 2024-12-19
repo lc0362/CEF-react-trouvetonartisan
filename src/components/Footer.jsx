@@ -18,7 +18,7 @@ const Footer = () => {
             className="h-auto max-w-[250px] py-3 "
           />
         </Link>
-        <div className='adresse      '>
+        <div className='adresse md:text-sm'>
             <strong className='py-3 lg:pt-3 block'>Lyon</strong>
              <address className="not-italic">101 cours Charlemagne <br />
                     CS 20033<br />
@@ -29,14 +29,13 @@ const Footer = () => {
         </div>  
         </div>
 
-                <div className='line py-10 lg:max-w-[900px] lg:mx-auto'>
-                <svg viewBox="0 0 200 1" xmlns="http://www.w3.org/2000/svg">
+                <div className='line pt-8 pb-5 lg:max-w-[900px] lg:mx-auto'>
+                <svg viewBox="0 0 200 0.6" xmlns="http://www.w3.org/2000/svg">
                 <line x1="1000" y1="0" x2="0" y2="0" stroke="white" /></svg>
                 </div>
 
 <small className='pb-30'>
-  <div className='flex flex-wrap text-balance gap-x-12 md:gap-x-12
-  lg:gap-x-4 lg:place-content-evenly gap-y-5 lg:text-xs lg:max-w-[900px] lg:mx-auto'>
+  <div className='flex flex-wrap text-balance gap-x-12 md:gap-x-12 lg:gap-x-4 lg:place-content-evenly gap-y-5 lg:text-xs lg:max-w-[900px] lg:mx-auto'>
 <a href="/">Mentions légales</a>  
 <a href="/">Données personnelles</a>
 <a href="/">Données Accessibilité : partiellement conforme</a>
