@@ -3,6 +3,7 @@ import { VscDash } from "react-icons/vsc";
 import artisansData from '../components/data/datas.json';
 import departementsData from '../components/data/departements.json';
 import Rating from '../components/Rating';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   // Filtre des artisans ayant la propriété "top" à true dans datas.json
@@ -142,14 +143,17 @@ const Home = () => {
 
 
           <div className="my-5 text-center">
+            <Link to="/liste">
             <button
               style={{ backgroundColor: 'var(--color-primary)' }}
               className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--color-secondary)'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-primary)'}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = 'var(--color-secondary)')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = 'var(--color-primary)')}
             >
               Tous les artisans
             </button>
+            </Link>
+
           </div>
         </div>
       </div>
