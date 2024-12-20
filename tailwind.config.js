@@ -3,5 +3,10 @@ module.exports = {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      textDecoration: ['hover', 'active'], 
+    },
+  },
   plugins: [],
-}
+};

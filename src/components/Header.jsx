@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -16,7 +14,6 @@ function Header() {
       setMenuOpen(false); // Ferme le menu
     }
   };
-  
 
   // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
   useEffect(() => {
@@ -64,7 +61,6 @@ function Header() {
                 style={{ color: 'var(--color-primary)' }}
                 size={40}
                 className="transform rotate-180" 
-              
               />
               <span 
                 className="menu-text text-xs"
@@ -95,35 +91,71 @@ function Header() {
           </form>
 
           {/* Liens de navigation desktop */}
-          <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm 
-          ">
-            <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+          <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm ">
+            <Link 
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+              to="/liste/batiment"
+            >
+              Bâtiment
+            </Link>
 
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
+            <Link 
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+              to="/liste/services"
+            >
+              Services
+            </Link>
 
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
+            <Link 
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+              to="/liste/fabrication"
+            >
+              Fabrication
+            </Link>
 
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
-
-            </nav>
+            <Link 
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+              to="/liste/alimentation"
+            >
+              Alimentation
+            </Link>
+          </nav>
         </div>
       </div>
 
       {/* Liens de navigation mobile */}
-      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full 
-      `  } id="mobile-menu" >
+      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full  `  } id="mobile-menu" >
         <nav className={`flex flex-col items-end px-10 gap-2 bg-[var(--color-primary)] 
       text-[var(--color-white)] text-xl z-10  sticky top-0
-         py-8 transition-transform duration-300 
+         py-8 
           ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
-          <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+          <Link 
+            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+            to="/liste/batiment"
+          >
+            Bâtiment
+          </Link>
         
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
-         
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
-         
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
-          
+          <Link 
+            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+            to="/liste/services"
+          >
+            Services
+          </Link>
+       
+          <Link 
+            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+            to="/liste/fabrication"
+          >
+            Fabrication
+          </Link>
+       
+          <Link 
+            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+            to="/liste/alimentation"
+          >
+            Alimentation
+          </Link>
         </nav>
       </div>
     </nav>
