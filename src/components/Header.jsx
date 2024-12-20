@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { CiSearch } from 'react-icons/ci';
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);  // État pour gérer l'ouverture et fermeture du menu
+  const location = useLocation();
+  const isNotHomePage = location.pathname !== '/'; // Constante pour repérer si l'url n'est pas la page d'accueil
+
+  const handleClickOutside = (event) => {
+    // Ferme le menu dès 1 clic
+    if (!event.target.closest('.navbar-toggler')) {
+      setMenuOpen(false); // Ferme le menu
+    }
+  };
+  
+
+  // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [menuOpen]);
 
   return (
-    <nav className="bg-white mx-auto max-w-[900px] py-5 px-10">
+    <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5`}>
+    <nav className="bg-white mx-auto max-w-[900px] px-10 ">
       <div className="w-full py-2 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -72,41 +95,38 @@ function Header() {
           </form>
 
           {/* Liens de navigation desktop */}
-          <ul className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm">
-            <li className="nav-item">
-              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
-            </li>
-            <li className="nav-item pl-5">
+          <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm">
+            <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+
               <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
-            </li>
-            <li className="nav-item pl-5">
+
               <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
-            </li>
-            <li className="nav-item pl-5">
+
               <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
-            </li>
-          </ul>
+
+            </nav>
         </div>
       </div>
 
       {/* Liens de navigation mobile */}
-      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden w-full`} id="navbarNav">
-        <ul className="navbar-nav flex flex-col items-start w-full py-2">
-          <li className="nav-item">
-            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
-          </li>
-          <li className="nav-item">
+      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full 
+      `  } id="mobile-menu" >
+        <nav className={`flex flex-col items-end px-10 gap-2 bg-[var(--color-primary)] 
+      text-[var(--color-white)] text-xl z-10 
+         py-8 transition-transform duration-300 
+          ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
+          <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+        
             <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
-          </li>
-          <li className="nav-item">
+         
             <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/fabrication">Fabrication</Link>
-          </li>
-          <li className="nav-item">
+         
             <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/alimentation">Alimentation</Link>
-          </li>
-        </ul>
+          
+        </nav>
       </div>
     </nav>
+    </div>
   );
 }
 
