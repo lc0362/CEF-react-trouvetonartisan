@@ -1,18 +1,13 @@
-
-
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { CiSearch } from 'react-icons/ci';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-  const isNotHomePage = location.pathname !== '/';
 
   return (
-    <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5`}>
-    <nav className="bg-white mx-auto max-w-[900px] px-10 ">
+    <nav className="bg-white mx-auto max-w-[900px] py-5 px-10">
       <div className="w-full py-2 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -79,7 +74,7 @@ function Header() {
           {/* Liens de navigation desktop */}
           <ul className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm">
             <li className="nav-item">
-            <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+              <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
             </li>
             <li className="nav-item pl-5">
               <Link className="nav-link text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
@@ -98,7 +93,7 @@ function Header() {
       <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden w-full`} id="navbarNav">
         <ul className="navbar-nav flex flex-col items-start w-full py-2">
           <li className="nav-item">
-          <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
+            <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/batiment">Bâtiment</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link mx-1 text-[var(--secondary-color)] hover:underline" to="/liste/services">Services</Link>
@@ -112,7 +107,6 @@ function Header() {
         </ul>
       </div>
     </nav>
-    </div>
   );
 }
 
