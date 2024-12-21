@@ -39,24 +39,43 @@ function Header() {
   };
 
   const mobileLinkVars = {
-    initial:{
-      scaleY: 0,
+    initial: {
+      y: "30vh", 
+      transition: {
+        duration: 0.5,
+        ease: [0.37, 0, 0.63, 1],
     },
-    animate:{
-      scaleY: 1,
-      transition:{
-        duration:0.5,
-        ease: [0.12, 0, 0.39, 0]
-      }
+  },
+    open: {
+      y: 0,  
+      transition: {
+        duration: 0.5,
+        ease: [0, 0.55, 0.45, 1],
     },
-    exit:{
-      scaleY: 0,
-      transition:{
-        duration:0.5,
-        ease: [0.22, 1, 0.36, 1]
-      }
     },
   };
+  
+  
+  
+  const containerVars = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
+  };
+  
+
+  const animationState = menuOpen ? "animate" : "initial";
+
+  
 
   // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
   useEffect(() => {
@@ -171,9 +190,9 @@ function Header() {
       <motion.nav
   variants={menuVars}
   initial="initial"
-  animate={menuOpen ? "animate" : "initial"}
+  animate={animationState}
   exit="exit"
-  className="flex flex-col h-full items-center   gap-2 bg-[var(--color-secondary)]  
+  className="flex flex-col items-center   gap-2 bg-[var(--color-secondary)]  
              text-[var(--color-white)]  z-10 sticky top-0 origin-top"
   
              >
@@ -181,39 +200,52 @@ function Header() {
           <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
         </div>
         
+       
+        <motion.div
+  variants={containerVars}
+  initial="initial"
+  animate={animationState}
+  exit="exit"
+  className="flex flex-col items-center gap-7 overflow-hidden"
+>
+
 
 <div className="pb-10">Choisissez une catégorie d'artisanat :</div>
 
+
+<motion.div variants={mobileLinkVars} className="overflow-hidden">
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-3 ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
             to="/liste/batiment"
           >
             Bâtiment
           </Link>
-
+</motion.div>
         
-        
+<motion.div variants={mobileLinkVars} className="overflow-hidden">
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-3 ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
             to="/liste/services"
           >
             Services
           </Link>
-       
+       </motion.div>
+       <motion.div variants={mobileLinkVars} className="overflow-hidden">
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-3 ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
             to="/liste/fabrication"
           >
             Fabrication
           </Link>
-       
+       </motion.div>
+       <motion.div variants={mobileLinkVars} className="overflow-hidden">
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-3 ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
             to="/liste/alimentation"
           >
             Alimentation
           </Link>
-
+</motion.div>
  <div className="flex flex-row items-center cursor-pointer mt-40 p-2 pb-5 gap-3 text-slate-400 hover:text-inherit">
  <RiCloseLargeFill />
   Fermer le menu
@@ -223,6 +255,10 @@ function Header() {
           
        
         
+        
+        </motion.div>
+        
+  
 
         </motion.nav>
 
