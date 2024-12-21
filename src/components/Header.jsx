@@ -38,25 +38,6 @@ function Header() {
     },
   };
 
-  const mobileLinkVars = {
-    initial:{
-      scaleY: 0,
-    },
-    animate:{
-      scaleY: 1,
-      transition:{
-        duration:0.5,
-        ease: [0.12, 0, 0.39, 0]
-      }
-    },
-    exit:{
-      scaleY: 0,
-      transition:{
-        duration:0.5,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    },
-  };
 
   // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
   useEffect(() => {
@@ -168,15 +149,16 @@ function Header() {
 
       {/* Liens de navigation mobile */}
       <div className={`' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full `  } id="mobile-menu" >
+
       <motion.nav
-  variants={menuVars}
-  initial="initial"
-  animate={menuOpen ? "animate" : "initial"}
-  exit="exit"
-  className="flex flex-col h-full items-center   gap-2 bg-[var(--color-secondary)]  
-             text-[var(--color-white)]  z-10 sticky top-0 origin-top"
-  
-             >
+      variants={menuVars}
+      initial="initial"
+      animate={menuOpen ? "animate" : "initial"}
+      exit="exit"
+      className="flex flex-col h-full items-center   gap-2 bg-[var(--color-secondary)]  
+      text-[var(--color-white)]  z-10 sticky top-0 origin-top" 
+      >
+        
 <div className="pb-10 text-center">
           <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
         </div>
