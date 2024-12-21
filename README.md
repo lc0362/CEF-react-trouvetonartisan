@@ -15,6 +15,8 @@
         npm install -D tailwindcss postcss autoprefixer
         npx tailwindcss init
         npm install @headlessui/react @heroicons/react
+- Installer le package framer-motion avec la commande :
+        npm install framer-motion
         
 
 

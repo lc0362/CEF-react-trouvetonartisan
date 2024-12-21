@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { CiSearch } from 'react-icons/ci';
+import { motion } from "framer-motion";
+import { RiCloseLargeFill } from "react-icons/ri";
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);  // État pour gérer l'ouverture et fermeture du menu
@@ -13,6 +16,46 @@ function Header() {
     if (!event.target.closest('.navbar-toggler')) {
       setMenuOpen(false); // Ferme le menu
     }
+  };
+
+  const menuVars = {
+    initial:{
+      scaleY: 0,
+    },
+    animate:{
+      scaleY: 1,
+      transition:{
+        duration:0.5,
+        ease: [0.12, 0, 0.39, 0]
+      }
+    },
+    exit:{
+      scaleY: 0,
+      transition:{
+        duration:0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    },
+  };
+
+  const mobileLinkVars = {
+    initial:{
+      scaleY: 0,
+    },
+    animate:{
+      scaleY: 1,
+      transition:{
+        duration:0.5,
+        ease: [0.12, 0, 0.39, 0]
+      }
+    },
+    exit:{
+      scaleY: 0,
+      transition:{
+        duration:0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    },
   };
 
   // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
@@ -124,39 +167,67 @@ function Header() {
       </div>
 
       {/* Liens de navigation mobile */}
-      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full  `  } id="mobile-menu" >
-        <nav className={`flex flex-col items-end px-10 gap-2 bg-[var(--color-primary)] 
-      text-[var(--color-white)] text-xl z-10  sticky top-0
-         py-8 
-          ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
+      <div className={`' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full `  } id="mobile-menu" >
+      <motion.nav
+  variants={menuVars}
+  initial="initial"
+  animate={menuOpen ? "animate" : "initial"}
+  exit="exit"
+  className="flex flex-col h-full items-center   gap-2 bg-[var(--color-secondary)]  
+             text-[var(--color-white)]  z-10 sticky top-0 origin-top"
+  
+             >
+<div className="pb-10 text-center">
+          <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
+        </div>
+        
+
+<div className="pb-10">Choisissez une catégorie d'artisanat :</div>
+
           <Link 
-            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
             to="/liste/batiment"
           >
             Bâtiment
           </Link>
+
+        
         
           <Link 
-            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
             to="/liste/services"
           >
             Services
           </Link>
        
           <Link 
-            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
             to="/liste/fabrication"
           >
             Fabrication
           </Link>
        
           <Link 
-            className={`nav-link mx-1 text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
             to="/liste/alimentation"
           >
             Alimentation
           </Link>
-        </nav>
+
+ <div className="flex flex-row items-center cursor-pointer mt-40 p-2 pb-5 gap-3 text-slate-400 hover:text-inherit">
+ <RiCloseLargeFill />
+  Fermer le menu
+  </div>
+
+
+          
+       
+        
+
+        </motion.nav>
+
+       
+        
       </div>
     </nav>
     </div>
