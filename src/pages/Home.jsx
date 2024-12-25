@@ -64,7 +64,7 @@ const Home = () => {
 
 
 
-        <div className="mt-8 text-center">
+  <div className="mt-8 text-center">
           <img src="/bulle-haut.png" alt="Bulle d'information" className="mx-auto" />
         </div>
       </div>
@@ -113,9 +113,10 @@ const Home = () => {
       >
         {artisan.name}
       </h2>
-      <p className="mb-3  ">
+      <div
+       className="mb-3  ">
         <strong>{artisan.note}</strong> <Rating note={artisan.note} />
-      </p>
+      </div>
       <p className="mb-3 lg:text-sm md:px-20 lg:px-0 
       ">
         <strong>{artisan.specialty}</strong>. {artisan.about}

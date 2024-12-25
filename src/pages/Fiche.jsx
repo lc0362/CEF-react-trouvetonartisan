@@ -62,9 +62,9 @@ const Fiche = () => {
 
           {/* Infos de l'artisan */}
           <div className="text-lg mb-5">
-            <p>
+            <div>
               <strong>Note :</strong> {artisan.note} <Rating note={artisan.note} />
-            </p>
+            </div>
             <p>
               <strong>Spécialité :</strong> {artisan.specialty}
             </p>

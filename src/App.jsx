@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom'; 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Search from './components/Search';
 import Home from './pages/Home';
 import _404 from './pages/_404';
 import List from './pages/List';
