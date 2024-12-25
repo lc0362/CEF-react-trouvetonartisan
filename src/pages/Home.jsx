@@ -9,6 +9,8 @@ const Home = () => {
   // Filtre des artisans ayant la propriété "top" à true dans datas.json
   const topArtisans = artisansData.filter((artisan) => artisan.top);
 
+  
+
   return (
     <>
      <div style={{ backgroundColor: 'var(--color-secondary)' }} className="text-white pt-8">
@@ -80,16 +82,24 @@ const Home = () => {
           <div className="flex flex-wrap gap-10
            md:gap-2
             transition-all duration-30
-           text-center justify-center 
+           text-center justify-center items-start 
           ">
   {topArtisans.map((artisan) => {
     const departement = departementsData[artisan.location];
 
+  // Générer un slug à partir du nom de l'artisan
+  const artisanSlug = artisan.name
+  .toLowerCase() // Passe tout en minuscule
+  .replace(/ /g, '-') // Remplace les espaces par des tirets
+  .normalize('NFD') // Supprime les accents
+  .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caracteres speciaux
+
     return (
+      <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
       <div
       key={artisan.id}
       style={{ backgroundColor: 'var(--color-white)' }}
-      className="text-dark p-6 transition-all duration-300 group relative basis-full lg:basis-[32%]
+      className="text-dark p-6 transition-all duration-300 group relative basis-full 
       hover:outline-[var(--color-primary)] 
       outline-none
       hover:outline
@@ -135,6 +145,7 @@ const Home = () => {
         </svg>
       </span>
     </div>
+    </Link>
     
 
     );

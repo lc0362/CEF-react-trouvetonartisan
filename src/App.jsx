@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import _404 from './pages/_404';
 import List from './pages/List';
+import Fiche from './pages/Fiche';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/liste" element={<List />} />
-<Route path="/liste/:category" element={<List />} />
-
+        <Route path="/liste/:category" element={<List />} />
+        <Route path="/fiche" element={<Fiche />} />
+        <Route path="/fiche/:name" element={<Fiche />} />
         <Route path="*" element={<_404 />} />
       </Routes>
       <Footer />
