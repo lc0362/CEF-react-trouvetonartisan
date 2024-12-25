@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import artisansData from '../components/data/datas.json';
+import { FaArrowRight } from "react-icons/fa";
 import departementsData from '../components/data/departements.json';
 import Rating from '../components/Rating';
-import { VscDash } from 'react-icons/vsc';
+import Breadcrumb from '../components/Breadcrumb.jsx';
 
 const List = () => {
   const { category } = useParams(); // Récupérer la catégorie depuis l'URL
@@ -21,17 +22,37 @@ const List = () => {
 
   return (
     <>
+    
       <div className="mx-auto max-w-[900px]">
-        <div className="max-w-7xl mx-auto px-10 lg:px-0">
+      <div className="mx-auto px-10 lg:px-0 py-5
+      ">
+
+        
           {/* Titre de la section */}
-          <div className="mb-5 lg:pl-20">
-            <div>
-              <VscDash className="dash text-7xl" style={{ color: 'var(--color-primary)' }} />
+          <div className="">
+            <div className=" text-xs">
+            < Breadcrumb />
             </div>
-            <h1 className="text-xl" style={{ color: 'var(--color-secondary)' }}>
+          
+            <h1 className="text-xl my-5
+            " style={{ color: 'var(--color-secondary)'}}>
               {category ? `Liste des artisans "${category}"` : 'Tous les artisans'}
             </h1>
           </div>
+
+{/* Filtre*/}
+          <div   
+          style={{ backgroundColor: 'var(--color-white)' }}
+          className="text-dark p-6 lg:basis-[90%]"
+          >
+
+
+          </div>
+
+<div className='my-5 text-xs'>
+{filteredArtisans.length} résultat(s)
+</div>
+
 
           {/* Liste des artisans */}
           <div className="flex flex-wrap gap-10 md:gap-2 transition-all duration-30 text-center">
@@ -70,23 +91,13 @@ const List = () => {
                       </p>
 
                       {/* Icône flèche */}
-                      <span className="flex justify-center mt-4 transition-transform duration-200 group-hover:scale-125">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={4}
-                          stroke="currentColor"
-                          className="w-4 h-4 mt-6"
-                          style={{ color: 'var(--color-primary)' }}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                          />
-                        </svg>
-                      </span>
+                     <div
+                             className="flex justify-center mt-4 transition-transform duration-200 group-hover:scale-125"
+                             style={{ color: 'var(--color-primary)' }} 
+                           >
+                             <FaArrowRight />
+                             
+                           </div>
                     </Link>
                   </div>
                 );
@@ -100,9 +111,9 @@ const List = () => {
           {!showAll && filteredArtisans.length > 9 && (
             <div className="my-5 text-center">
               <button
-                onClick={() => setShowAll(true)} // Met à jour l'état
+                onClick={() => setShowAll(true)} // Met à jour l'état 
                 style={{ backgroundColor: 'var(--color-primary)' }}
-                className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+                className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-110"
               >
                 Voir plus de résultats
               </button>
