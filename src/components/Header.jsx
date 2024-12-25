@@ -1,23 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { CiSearch } from 'react-icons/ci';
 import { motion } from "framer-motion";
 import { RiCloseLargeFill } from "react-icons/ri";
-import Search from './Search';
+import datas from './data/datas.json';
 
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);  // État pour gérer l'ouverture et fermeture du menu
+  const [menuOpen, setMenuOpen] = useState(false);  // État pour gérer l'ouverture et fermeture du menu (mobile)
   const location = useLocation();
-  const isNotHomePage = location.pathname !== '/'; // Constante pour repérer si l'url n'est pas la page d'accueil
+  const isNotHomePage = location.pathname !== '/'; // Vérification que l'url n'est pas la page d'accueil
 
-  const handleClickOutside = (event) => {
-    // Ferme le menu dès 1 clic
-    if (!event.target.closest('.navbar-toggler')) {
-      setMenuOpen(false); // Ferme le menu
+  const [searchVisible, setSearchVisible] = useState(false); // Barre de recherche non visible par défaut
+  const [searchTerm, setSearchTerm] = useState(""); // Stocker la valeur de la recherche
+  const [showResults, setShowResults] = useState(false); // Afficher ou masquer les résultats de recherche
+
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        searchVisible && // Vérifie si la recherche est visible
+        !event.target.closest('.search-menu-mobile') && // Ignore les clics dans la zone mobile
+        !event.target.closest('#searchBar') // Ignore les clics dans l'input
+      ) {
+        setSearchVisible(false);
+        setSearchTerm(""); 
+        setShowResults(false);
+      }
+    };
+
+    
+
+    if (searchVisible) {
+      document.addEventListener('click', handleClickOutside);
+      searchInputRef.current?.focus(); // Focus sur l'input lorsque visible
+    } else {
+      document.removeEventListener('click', handleClickOutside);
     }
+
+    return () => document.removeEventListener('click', handleClickOutside); // Nettoyage
+  }, [searchVisible]); // Dépendance
+  
+
+  const toggleSearch = () => {
+    setTimeout(() => { // Ajout d'un délai pour éviter la fermeture immédiate
+      setSearchVisible(!searchVisible); 
+      setSearchTerm(""); 
+      setShowResults(false);
+    }, 50); // Délai de 50ms pour laisser le temps au DOM de se stabiliser
   };
+  
+
+  const handleSearchTerm = (e) => {
+    let value = e.target.value;
+    setSearchTerm(value);
+};
 
   const menuVars = {
     initial:{
@@ -40,17 +79,10 @@ function Header() {
   };
 
 
-  // Ajout/Suppression d'un écouteur d'événement en fonction de l'état du menu
-  useEffect(() => {
-    if (menuOpen) {
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-    }
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [menuOpen]);
+  
 
   return (
+     // Ajout de bordures conditionnelles si ce n'est pas la page d'accueil
     <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5`}>
     <nav className="bg-white mx-auto max-w-[900px] px-10 ">
       <div className="w-full py-2 flex items-center justify-between h-16">
@@ -63,19 +95,39 @@ function Header() {
           />
         </Link>
 
-        
-
         {/* Sur mobile : loupe + burger */}
         <div className="search-menu-mobile flex items-center lg:hidden ml-2">
-          {/* Icône loupe mobile */}
-          <button 
-            className="p-2 text-[var(--color-primary)]"
-            type="button"
-            aria-label="Rechercher"
-          >
-           
-            <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
-          </button>
+        {!searchVisible && (
+            <button className="p-2 text-[var(--color-primary)]" 
+            type="button" 
+            aria-label="Rechercher" 
+            onClick={toggleSearch}
+            >
+              <CiSearch style={{ color: 'var(--color-primary)' }} size={40} />
+            </button>
+          )}
+          {searchVisible && (
+            <div className="absolute top-0 left-0 w-full bg-white z-50 p-4 flex items-center border-b border-[var(--color-primary)]">
+
+              <input 
+                type='text' 
+                name='searchBar' 
+                id="searchBar" 
+                placeholder="Rechercher"
+                ref={searchInputRef}
+                className="w-full p-2 border-none focus:outline-none"
+                onChange={handleSearchTerm}
+                value={searchTerm}
+              />
+              <button 
+                type="button"
+                className="p-2 text-[var(--color-primary)]"
+                onClick={() => setShowResults(true)}
+              >
+                <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
+              </button>
+            </div>
+          )}
 
           {/* Menu burger */}
           <button
@@ -99,15 +151,26 @@ function Header() {
             </div>
           </button>
         </div>
+        
+
+        
 
         <div className="header-lg-right hidden lg:flex flex-col items-end">
           {/* Barre de recherche visible à partir de lg */}
-          
-
           <form className="search-bar hidden lg:flex items-center border-b border-r border-[var(--color-primary)] mb-2 text-sm">
-            
-          <Search className="border-none px-2 py-1 focus:outline-none"/>
-            
+            <input 
+              type="text" 
+              aria-label="Search"
+              placeholder="Rechercher"
+              className="border-none px-2 py-1 focus:outline-none"
+            />
+            <button 
+              type="submit"
+              aria-label="Rechercher"
+              className="px-2 text-[var(--color-primary)]"
+            >
+              <CiSearch style={{ color: 'var(--color-primary)' }} size={20} />
+            </button>
           </form>
 
           {/* Liens de navigation desktop */}
@@ -144,7 +207,8 @@ function Header() {
       </div>
 
       {/* Liens de navigation mobile */}
-      <div className={`' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full `  } id="mobile-menu" >
+      <div className={`${menuOpen ? 'block' : 'hidden'} lg:hidden absolute mt-5 left-0 w-full`} id="mobile-menu">
+
 
       <motion.nav
       variants={menuVars}
