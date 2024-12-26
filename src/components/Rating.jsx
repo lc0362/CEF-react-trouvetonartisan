@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/components/Rating.scss';
 
 function Rating({ note }) {
-    const fullStars = note >= 4.5 ? 5 : Math.floor(note); 
+    const fullStars = Math.round(note); 
     const emptyStars = 5 - fullStars; 
   
 
