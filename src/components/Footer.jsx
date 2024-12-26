@@ -18,13 +18,13 @@ const Footer = () => {
             className="h-auto max-w-[250px] py-3 "
           />
         </Link>
-        <div className='adresse'>
+        <div>
             <strong className='py-3 lg:pt-3 block'>Lyon</strong>
              <address className="not-italic">101 cours Charlemagne <br />
                     CS 20033<br />
                     69269 LYON CEDEX 02<br />
                     France<br />
-                    <a href="tel:+330426734000">+33 (0)4 26 73 40 00</a>
+                    <Link to="tel:+330426734000">+33 (0)4 26 73 40 00</Link>
               </address>
         </div>  
         </div>
@@ -37,16 +37,16 @@ const Footer = () => {
 <small className='pb-30'>
   <div className='flex flex-wrap text-balance gap-x-12 md:gap-x-12
   lg:gap-x-4 lg:place-content-evenly gap-y-5 lg:text-xs lg:max-w-[900px] lg:mx-auto'>
-<a href="/">Mentions légales</a>  
-<a href="/">Données personnelles</a>
-<a href="/">Données Accessibilité : partiellement conforme</a>
-<a href="/">Presse</a>
-<a href="/">Marchés publics</a>
-<a href="/">Venir à la Région</a>
-<a href="/">Contacts</a>
+<Link to="#">Mentions légales</Link>  
+<Link to="#">Données personnelles</Link>
+<Link to="#">Données Accessibilité : partiellement conforme</Link>
+<Link to="#">Presse</Link>
+<Link to="#">Marchés publics</Link>
+<Link to="#">Venir à la Région</Link>
+<Link to="#">Contacts</Link>
 </div>
 <div className='py-5 lg:max-w-[900px] lg:mx-auto lg:text-center lg:text-xs'>
-<a href="/">Gestion des cookies</a>
+<Link to="#">Gestion des cookies</Link>
 </div>
 </small>
 
