@@ -21,7 +21,7 @@ const Home = () => {
         Comment trouver mon artisan ?
       </h1>
       <div className="space-y-5 text-left ">
-        <p className="flex items-center 
+        <div className="flex items-center 
         ">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
@@ -30,8 +30,8 @@ const Home = () => {
             1
           </span>
           Choisir la catégorie d'artisanat dans le menu.
-        </p>
-        <p className="flex items-center">
+        </div>
+        <div className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
             className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
@@ -39,8 +39,8 @@ const Home = () => {
             2
           </span>
           Choisir un artisan.
-        </p>
-        <p className="flex items-center">
+        </div>
+        <div className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
             className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
@@ -48,8 +48,8 @@ const Home = () => {
             3
           </span>
           Le contacter via le formulaire de contact.
-        </p>
-        <p className="flex items-center">
+        </div>
+        <div className="flex items-center">
           <span
             style={{ backgroundColor: 'var(--color-primary)' }}
             className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
@@ -57,7 +57,7 @@ const Home = () => {
             4
           </span>
           Une réponse sera apportée sous 48h.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -117,14 +117,14 @@ const Home = () => {
        className="mb-3  ">
         <strong>{artisan.note}</strong> <Rating note={artisan.note} />
       </div>
-      <p className="mb-3 lg:text-sm md:px-20 lg:px-0 
+      <div className="mb-3 lg:text-sm md:px-20 lg:px-0 
       ">
         <strong>{artisan.specialty}</strong>. {artisan.about}
-      </p>
-      <p className="mb-3 lg:text-sm">
+      </div>
+      <div className="mb-3 lg:text-sm">
         <strong>{artisan.location}</strong>
         {departement && ` (${departement})`}
-      </p>
+      </div>
      
       {/* Icône flèche */}
       <div

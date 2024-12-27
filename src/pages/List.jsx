@@ -79,16 +79,16 @@ const List = () => {
                       >
                         {artisan.name}
                       </h2>
-                      <p className="mb-3">
+                      <div className="mb-3">
                         <strong>{artisan.note}</strong> <Rating note={artisan.note} />
-                      </p>
-                      <p className="mb-3 lg:text-sm md:px-20 lg:px-0">
+                      </div>
+                      <div className="mb-3 lg:text-sm md:px-20 lg:px-0">
                         <strong>{artisan.specialty}</strong>. {artisan.about}
-                      </p>
-                      <p className="mb-3 lg:text-sm">
+                      </div>
+                      <div className="mb-3 lg:text-sm">
                         <strong>{artisan.location}</strong>
                         {departement && ` (${departement})`}
-                      </p>
+                      </div>
 
                       {/* Icône flèche */}
                      <div
@@ -103,7 +103,7 @@ const List = () => {
                 );
               })
             ) : (
-              <p>Aucun artisan trouvé.</p>
+              <div>Aucun artisan trouvé.</div>
             )}
           </div>
 
