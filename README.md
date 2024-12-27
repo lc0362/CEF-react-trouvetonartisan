@@ -10,7 +10,6 @@
         npm install react-icons
 - Installer SASS avec les commandes : 
         npm install -g sass
-        npm i tailwindcss postcss-cli autoprefixer -D
 - Installer Tailwind et ses icones avec les commandes :
         npm install -D tailwindcss postcss autoprefixer
         npx tailwindcss init
