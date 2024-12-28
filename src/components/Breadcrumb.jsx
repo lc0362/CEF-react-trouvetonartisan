@@ -8,7 +8,7 @@ const Breadcrumb = () => {
       style={{
         color: 'var(--color-secondary)',
         position: 'relative',
-        zIndex: 10, 
+        zIndex: 2, 
       }}
     >
       <Link to="/" className="hover:underline">
