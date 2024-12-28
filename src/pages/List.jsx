@@ -60,10 +60,10 @@ const List = () => {
               visibleArtisans.map((artisan) => {
                 // Générer un slug à partir du nom de l'artisan
                 const artisanSlug = artisan.name
-                  .toLowerCase()
+                  .toLowerCase() // Passe tout en minuscule
                   .replace(/ /g, '-') // Remplace les espaces par des tirets
                   .normalize('NFD') // Supprime les accents
-                  .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caractères spéciaux
+                  .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caracteres speciaux
 
                 const departement = departementsData[artisan.location];
                 return (

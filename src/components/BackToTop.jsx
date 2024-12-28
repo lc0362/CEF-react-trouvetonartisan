@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 
 const BackToTop = () => {
@@ -17,17 +17,12 @@ const BackToTop = () => {
 
   // Fonction pour remonter en haut de la page
   const topFunction = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Défilement fluide
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
   };
 
-  // Ajouter un écouteur d'événements lors du montage du composant
-  useEffect(() => {
-    window.addEventListener('scroll', scrollFunction);
-    // Nettoie l'événement lors du démontage du composant
-    return () => {
-      window.removeEventListener('scroll', scrollFunction);
-    };
-  }, []);
+
+window.addEventListener('scroll', scrollFunction);
+   
 
   return (
     <button

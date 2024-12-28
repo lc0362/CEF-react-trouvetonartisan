@@ -11,10 +11,11 @@ const Fiche = () => {
   // Fonction pour générer un slug à partir d'un nom
   const artisanSlug = (text) => {
     return text
-      .toLowerCase()                     // Minuscule
-      .normalize('NFD')                  // Décompose les accents
-      .replace(/[\u0300-\u036f]/g, '')   // Supprime les accents
-      .replace(/ /g, '-');               // Remplace les espaces par des tirets
+      .toLowerCase() // Passe tout en minuscule
+      .replace(/ /g, '-') // Remplace les espaces par des tirets
+      .normalize('NFD') // Supprime les accents
+      .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caracteres speciaux
+    
   };
 
   // Trouver l'artisan correspondant au slug

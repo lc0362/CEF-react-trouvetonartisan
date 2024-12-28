@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb'; 
 
-const _404 = () => {
+const Page404 = () => {
   const links = [
     { label: 'Accueil', to: '/' },
   ];
@@ -36,4 +36,4 @@ const _404 = () => {
   );
 };
 
-export default _404;
+export default Page404;
