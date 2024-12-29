@@ -13,7 +13,9 @@ function Header() {
   const location = useLocation();
   const isNotHomePage = location.pathname !== '/'; // Variable pour repérer si l'url n'est pas la page d'accueil
   const [searchVisible, setSearchVisible] = useState(false); // Barre de recherche non visible par défaut
-  const [showResults, setShowResults] = useState(false); // Résultats de recherche non visibles par défaut
+  const [showDesktopResults, setShowDesktopResults] = useState(false);
+  const [showMobileResults, setShowMobileResults] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState(""); // Stocker la valeur de la recherche
 
   const normalizeString = (str) => {
@@ -123,7 +125,7 @@ function Header() {
               <button 
                 type="button"
                 className="p-2 text-[var(--color-primary)]"
-                onClick={() => setShowResults(!showResults)}
+                onClick={() => setShowMobileResults(!showMobileResults)}
               >
                 <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
               </button >
@@ -199,39 +201,28 @@ function Header() {
 
         <div className="header-lg-right hidden lg:flex flex-col items-end">
           {/* Barre de recherche visible à partir de lg */}
-          {!searchVisible && ( // Si la barre de recherche n'est pas visible
-          <form className="search-bar hidden lg:flex items-center border-b border-r border-[var(--color-primary)] mb-2 text-sm">
+          
+          <form 
+          onSubmit={(e) => e.preventDefault()} 
+          className="search-bar hidden lg:flex items-center border-b border-r border-[var(--color-primary)] mb-2 text-sm"
+          >
             <input 
               type="text" 
               aria-label="Search"
               placeholder="Rechercher"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)} 
+              onFocus={() => setShowDesktopResults(true)} 
               className="border-none px-2 py-1 focus:outline-none"
             />
             <button 
-              type="submit"
               aria-label="Rechercher"
               className="px-2 text-[var(--color-primary)]"
-              onClick={() => setShowResults(!showResults)}
+              onClick={() => setShowDesktopResults(!showDesktopResults)}
             >
               <CiSearch style={{ color: 'var(--color-primary)' }} size={20} />
             </button>
           </form>
-)}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -273,6 +264,60 @@ function Header() {
               Alimentation
             </Link>
           </nav>
+          
+          {showDesktopResults && (
+  <div className="absolute top-14 z-[20] bg-[var(--color-white)] shadow-lg rounded-md">
+    <ul className="max-w-[900px] z-[100]">
+      {artisanResult.length > 0 ? (
+        artisanResult.map((artisan) => {
+          // Générer un slug propre pour l'URL
+          const artisanSlug = artisan.name
+            .toLowerCase()
+            .replace(/ /g, '-')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, "");
+
+          return (
+            <li key={artisan.id} 
+            className="border-b p-4 hover:bg-gray-50 transition duration-200"
+            onClick={() => setShowDesktopResults(false)} 
+            >
+              <Link to={`/fiche/${artisanSlug}`} className="block">
+                <p className="text-lg font-bold text-[var(--color-secondary)]">
+                  {artisan.name}
+                </p>
+                <p className="text-sm text-[var(--color-secondary)]">
+                  {artisan.specialty} - {artisan.location}
+                </p>
+                <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
+                  <FaArrowRight />
+                </div>
+              </Link>
+            </li>
+          );
+        })
+      ) : (
+        // Message si aucun résultat trouvé
+        <li className="p-5 text-[var(--color-accent)]">
+          Aucun artisan ne correspond à votre recherche.
+        </li>
+      )}
+    </ul>
+
+    {/* Bouton pour fermer la recherche desktop */}
+    <div
+      className="flex flex-row items-center cursor-pointer gap-3 text-slate-400 hover:text-inherit px-10 pb-2"
+      onClick={() => setShowDesktopResults(false)} 
+    >
+      <RiCloseLargeFill />
+      Fermer la recherche
+    </div>
+  </div>
+)}
+
+
+
+
         </div>
       </div>
 
