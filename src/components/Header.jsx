@@ -75,7 +75,6 @@ function Header() {
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [menuOpen, searchVisible]);
-  
 
   return (
     <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5 `}>
@@ -130,7 +129,10 @@ function Header() {
               </button >
               </div> 
               {/* Affichage des résultats */}
-              <div className="bg-[var(--color-white)]  top-20 left-0 w-80 shadow-md flex flex-col gap-5 absolute z-[20]">
+              <div className="bg-[var(--color-white)]  top-20 left-0 w-80 shadow-md flex flex-col gap-5 absolute z-[20]"
+              onClick={(event) => {
+              setSearchVisible(!searchVisible); // Utilisation directe de l'état
+              }}>
               {artisanResult.length > 0 ? (
   artisanResult.map((artisan) => {
     const artisanSlug = artisan.name
@@ -159,8 +161,11 @@ function Header() {
 ) : (
   <p className="text-[var(--color-accent)] p-5">Aucun artisan ne correspond à votre recherche.</p>
 )}
-                   <div className="flex flex-row items-center cursor-pointer gap-3 text-slate-400 hover:text-inherit px-10 pb-2
-                   ">
+                   <div className="flex flex-row items-center cursor-pointer gap-3 text-slate-400 hover:text-inherit px-10 pb-2"
+              onClick={(event) => {
+              setSearchVisible(!searchVisible); // Utilisation directe de l'état
+              }}
+                   >
  <RiCloseLargeFill />
   Fermer la recherche
   </div>
