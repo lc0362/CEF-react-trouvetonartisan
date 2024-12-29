@@ -110,7 +110,7 @@ function Header() {
           </button>
         )}
          {searchVisible && ( // Si la barre de recherche est visible
-         <div className="border-[var(--color-white)]">
+         <div className="">
           <div className="absolute top-0 left-0 w-full bg-white z-50 p-4 flex items-center border-b border-[var(--color-primary)]">
 
               <input 
@@ -131,7 +131,7 @@ function Header() {
               </button >
               </div> 
               {/* Affichage des résultats */}
-              <div className="bg-[var(--color-white)]  top-20 left-0 w-80 shadow-md flex flex-col gap-5 absolute z-[20]"
+              <div className="bg-[var(--color-white)] rounded-md top-20 left-0 w-80 shadow-md flex flex-col gap-5 absolute z-[20]"
               onClick={(event) => {
               setSearchVisible(!searchVisible); // Utilisation directe de l'état
               }}>
@@ -212,7 +212,6 @@ function Header() {
               placeholder="Rechercher"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} 
-              onFocus={() => setShowDesktopResults(true)} 
               className="border-none px-2 py-1 focus:outline-none"
             />
             <button 
@@ -225,14 +224,57 @@ function Header() {
           </form>
 
 
+          {showDesktopResults && (
+  <div className="absolute top-14 bg-[var(--color-white)] shadow-lg rounded-md">
+    <ul className="max-w-[900px] z-[100]">
+      {artisanResult.length > 0 ? (
+        artisanResult.map((artisan) => {
+          // Générer un slug propre pour l'URL
+          const artisanSlug = artisan.name
+            .toLowerCase()
+            .replace(/ /g, '-')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, "");
 
+          return (
+            <li key={artisan.id} 
+            className="border-b px-10 py-5 flex justify-center "
+            onClick={() => setShowDesktopResults(false)} 
+            >
+              <div className="transition duration-200 hover:scale-110">
+              <Link to={`/fiche/${artisanSlug}`} className="block">
+                <p className="text-lg font-bold text-[var(--color-secondary)]">
+                  {artisan.name}
+                </p>
+                <p className="text-sm text-[var(--color-secondary)]">
+                  {artisan.specialty} - {artisan.location}
+                </p>
+                <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
+                  <FaArrowRight />
+                </div>
+              </Link>
+              </div>
+            </li>
+          );
+        })
+      ) : (
+        // Message si aucun résultat trouvé
+        <li className="flex-wrap border-b p-5 my-4 text-[var(--color-accent)] max-w-[260px]">
+          Aucun artisan ne correspond à votre recherche.
+        </li>
+      )}
+    </ul>
 
-
-
-
-
-
-
+    {/* Bouton pour fermer la recherche desktop */}
+    <div
+      className="flex flex-row items-center cursor-pointer gap-3 text-slate-400 hover:text-inherit px-10 py-5"
+      onClick={() => setShowDesktopResults(false)} 
+    >
+      <RiCloseLargeFill />
+      Fermer la recherche
+    </div>
+  </div>
+)}
 
           {/* Liens de navigation desktop */}
           <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm ">
@@ -265,55 +307,7 @@ function Header() {
             </Link>
           </nav>
           
-          {showDesktopResults && (
-  <div className="absolute top-14 z-[20] bg-[var(--color-white)] shadow-lg rounded-md">
-    <ul className="max-w-[900px] z-[100]">
-      {artisanResult.length > 0 ? (
-        artisanResult.map((artisan) => {
-          // Générer un slug propre pour l'URL
-          const artisanSlug = artisan.name
-            .toLowerCase()
-            .replace(/ /g, '-')
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, "");
-
-          return (
-            <li key={artisan.id} 
-            className="border-b p-4 hover:bg-gray-50 transition duration-200"
-            onClick={() => setShowDesktopResults(false)} 
-            >
-              <Link to={`/fiche/${artisanSlug}`} className="block">
-                <p className="text-lg font-bold text-[var(--color-secondary)]">
-                  {artisan.name}
-                </p>
-                <p className="text-sm text-[var(--color-secondary)]">
-                  {artisan.specialty} - {artisan.location}
-                </p>
-                <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
-                  <FaArrowRight />
-                </div>
-              </Link>
-            </li>
-          );
-        })
-      ) : (
-        // Message si aucun résultat trouvé
-        <li className="p-5 text-[var(--color-accent)]">
-          Aucun artisan ne correspond à votre recherche.
-        </li>
-      )}
-    </ul>
-
-    {/* Bouton pour fermer la recherche desktop */}
-    <div
-      className="flex flex-row items-center cursor-pointer gap-3 text-slate-400 hover:text-inherit px-10 pb-2"
-      onClick={() => setShowDesktopResults(false)} 
-    >
-      <RiCloseLargeFill />
-      Fermer la recherche
-    </div>
-  </div>
-)}
+         
 
 
 
