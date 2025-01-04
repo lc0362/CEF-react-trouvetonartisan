@@ -13,8 +13,8 @@ function Header() {
   const location = useLocation();
   const isNotHomePage = location.pathname !== '/'; // Variable pour repérer si l'url n'est pas la page d'accueil
   const [searchVisible, setSearchVisible] = useState(false); // Barre de recherche non visible par défaut
-  const [showDesktopResults, setShowDesktopResults] = useState(false);
-  const [showMobileResults, setShowMobileResults] = useState(false);
+  const [showDesktopResults, setShowDesktopResults] = useState(false); // Résultats non visibles par défaut
+
 
   const [searchTerm, setSearchTerm] = useState(""); // Stocker la valeur de la recherche
 
@@ -104,14 +104,14 @@ function Header() {
               event.stopPropagation(); // Eviter la fermeture immédiate
               setSearchVisible(!searchVisible); // Utilisation directe de l'état
             }}
-          
           >
             <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
           </button>
         )}
          {searchVisible && ( // Si la barre de recherche est visible
          <div className="">
-          <div className="absolute top-0 left-0 w-full bg-white z-50 p-4 flex items-center border-b border-[var(--color-primary)]">
+          <div className="absolute top-0 left-0 w-full bg-white z-50 p-4 flex items-center 
+          border-b border-[var(--color-primary)]">
 
               <input 
                 type="text"
@@ -122,16 +122,19 @@ function Header() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
+              
               <button 
                 type="button"
                 className="p-2 text-[var(--color-primary)]"
-                onClick={() => setShowMobileResults(!showMobileResults)}
+                aria-expanded={searchVisible}
+                
               >
                 <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
               </button >
               </div> 
               {/* Affichage des résultats */}
-              <div className="bg-[var(--color-white)] rounded-md top-20 left-0 w-80 shadow-md flex flex-col gap-5 absolute z-[20]"
+              <div className="bg-[var(--color-white)] rounded-md top-20 left-0 w-80 
+              shadow-md flex flex-col gap-5 absolute z-[20]"
               onClick={(event) => {
               setSearchVisible(!searchVisible); // Utilisation directe de l'état
               }}>
@@ -204,7 +207,8 @@ function Header() {
           
           <form 
           onSubmit={(e) => e.preventDefault()} 
-          className="search-bar hidden lg:flex items-center border-b border-r border-[var(--color-primary)] mb-2 text-sm"
+          className="search-bar hidden lg:flex items-center border-b
+          border-r border-[var(--color-primary)] mb-2 text-sm"
           >
             <input 
               type="text" 
@@ -217,7 +221,11 @@ function Header() {
             <button 
               aria-label="Rechercher"
               className="px-2 text-[var(--color-primary)]"
-              onClick={() => setShowDesktopResults(!showDesktopResults)}
+              onClick={() => {
+                if (searchTerm.trim() !== "") {
+                  setShowDesktopResults(!showDesktopResults);
+                }
+              }}
             >
               <CiSearch style={{ color: 'var(--color-primary)' }} size={20} />
             </button>
