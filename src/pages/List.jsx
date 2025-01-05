@@ -34,20 +34,12 @@ const List = () => {
             < Breadcrumb />
             </div>
           
-            <h1 className="text-xl my-5
-            " style={{ color: 'var(--color-secondary)'}}>
+            <h1 className="text-xl my-5 text-[var(--color-secondary)]">
               {category ? `Liste des artisans "${category}"` : 'Tous les artisans'}
             </h1>
           </div>
 
-{/* Filtre*/}
-          <div   
-          style={{ backgroundColor: 'var(--color-white)' }}
-          className="text-dark p-6 lg:basis-[90%]"
-          >
 
-
-          </div>
 
 <div className='my-5 text-xs'>
 {filteredArtisans.length} résultat(s)
@@ -69,13 +61,14 @@ const List = () => {
                 return (
                   <div
                     key={artisan.id}
-                    style={{ backgroundColor: 'var(--color-white)' }}
-                    className="text-dark p-6 transition-all duration-300 group relative basis-full lg:basis-[32%] hover:outline-[var(--color-primary)] outline-none hover:outline hover:outline-4 hover:cursor-pointer"
+                    className="bg-[var(--color-white)] text-dark p-6 transition-all 
+                    duration-300 group relative basis-full lg:basis-[32%] hover:outline-[var(--color-primary)] 
+                    outline-none hover:outline hover:outline-4 hover:cursor-pointer"
                   >
                     <Link to={`/fiche/${artisanSlug}`}>
                       <h2
-                        className="text-lg mb-2 transition-transform duration-200 group-hover:scale-110"
-                        style={{ color: 'var(--color-secondary)' }}
+                        className="text-[var(--color-secondary)] text-lg mb-2 
+                        transition-transform duration-200 group-hover:scale-110"
                       >
                         {artisan.name}
                       </h2>
@@ -92,8 +85,8 @@ const List = () => {
 
                       {/* Icône flèche */}
                      <div
-                             className="flex justify-center mt-4 transition-transform duration-200 group-hover:scale-125"
-                             style={{ color: 'var(--color-primary)' }} 
+                             className="text-[var(--color-primary)] flex justify-center mt-4 
+                             transition-transform duration-200 group-hover:scale-125"
                            >
                              <FaArrowRight />
                              
@@ -112,8 +105,8 @@ const List = () => {
             <div className="my-5 text-center">
               <button
                 onClick={() => setShowAll(true)} // Met à jour l'état 
-                style={{ backgroundColor: 'var(--color-primary)' }}
-                className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-110"
+                className="bg-[var(--color-primary)] text-white py-2 px-8 rounded-full 
+                transition-all duration-300 transform hover:scale-110 hover:bg-[var(--color-secondary)]"
               >
                 Voir plus de résultats
               </button>

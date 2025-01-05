@@ -19,6 +19,12 @@
        url('../fonts/Graphik-Bold-Trial.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../fonts/Poppins-Bold.woff') format('woff'),
+       url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+
 
 
 .App {
@@ -26,6 +32,10 @@
   cursor: default;
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Graphik-Bold', sans-serif;
+    font-family: 'Graphik-Bold', 'Poppins-Bold', Arial, sans-serif;
+  }
+
+  b, strong {
+    font-family: 'Graphik-Bold', 'Poppins-Bold', Arial, sans-serif;
   }
 }

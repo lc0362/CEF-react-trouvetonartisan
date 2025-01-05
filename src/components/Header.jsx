@@ -105,7 +105,7 @@ function Header() {
               setSearchVisible(!searchVisible); // Utilisation directe de l'état
             }}
           >
-            <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
+            <CiSearch size={30} />
           </button>
         )}
          {searchVisible && ( // Si la barre de recherche est visible
@@ -129,7 +129,7 @@ function Header() {
                 aria-expanded={searchVisible}
                 
               >
-                <CiSearch style={{ color: 'var(--color-primary)' }} size={30} />
+                <CiSearch size={30} />
               </button >
               </div> 
               {/* Affichage des résultats */}
@@ -152,14 +152,12 @@ function Header() {
           <Link to={`/fiche/${artisanSlug}`}>
             <p className="text-lg font-bold text-[var(--color-secondary)]">{artisan.name}</p>
             <p className="text-sm text-[var(--color-secondary)]">{artisan.specialty} - {artisan.location}</p>
-            <div className="flex justify-center mt-4 transition-transform duration-200" style={{ color: 'var(--color-primary)' }}>
+            <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
               <FaArrowRight />
             </div>
           </Link>
         </div>
-       
       </div>
-
     ); 
   }) 
   
@@ -186,15 +184,13 @@ function Header() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center  text-[var(--color-primary)]">
               <HiMenuAlt2 
-                style={{ color: 'var(--color-primary)' }}
                 size={40}
                 className="transform rotate-180" 
               />
               <span 
-                className="menu-text text-xs"
-                style={{ color: 'var(--color-primary)' }}
+                className="menu-text text-xs text-[var(--color-primary)]"
               >
                 Menu
               </span>
@@ -227,7 +223,7 @@ function Header() {
                 }
               }}
             >
-              <CiSearch style={{ color: 'var(--color-primary)' }} size={20} />
+              <CiSearch size={20} />
             </button>
           </form>
 

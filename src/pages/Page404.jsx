@@ -22,10 +22,9 @@ const Page404 = () => {
         </div>
         <Link to="/">
             <button
-              style={{ backgroundColor: 'var(--color-primary)' }}
-              className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--color-secondary)'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-primary)'}
+              className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
+              transition-all duration-300 transform hover:scale-105 hover:bg-[var(--color-secondary)]"
+
             >
               Retourner vers la page d'accueil
             </button>

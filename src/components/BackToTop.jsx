@@ -28,17 +28,17 @@ window.addEventListener('scroll', scrollFunction);
     <button
       onClick={topFunction}
       title="Revenir en haut de la page"
-      style={{ backgroundColor: 'var(--color-white)' }}
       onMouseEnter={(e) => (e.target.style.backgroundColor = 'var(--color-dark)')}
                   onMouseLeave={(e) => (e.target.style.backgroundColor = 'var(--color-white)')}
       className={`fixed bottom-5 right-7 z-[99] border-none outline-none 
                   text-white cursor-pointer p-4 rounded-full text-lg 
                   transition-all duration-300 shadow-xl 
+                  bg-[var(--color-white)] 
                   ${isVisible ? 'block' : 'hidden'}`}
     >
        <FaArrowRight
-       style={{ color: 'var(--color-primary)' }}
-       className="transform -rotate-90"  />
+       className="transform -rotate-90
+       text-[var(--color-primary)]"  />
     </button>
   );
 };

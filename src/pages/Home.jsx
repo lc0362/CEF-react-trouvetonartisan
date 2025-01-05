@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-     <div style={{ backgroundColor: 'var(--color-secondary)' }} className="text-white pt-8">
+     <div className="text-white pt-8 bg-[var(--color-secondary)]">
   <div className="max-w-lg mx-auto md:max-w-[800px] p-5 ">
     <div className="md:flex md:items-center md:space-x-5 ">
       <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px] ">
@@ -24,8 +24,7 @@ const Home = () => {
         <div className="flex items-center 
         ">
           <span
-            style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110 bg-[var(--color-primary)]"
           >
             1
           </span>
@@ -33,8 +32,7 @@ const Home = () => {
         </div>
         <div className="flex items-center">
           <span
-            style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110 bg-[var(--color-primary)]"
           >
             2
           </span>
@@ -42,8 +40,7 @@ const Home = () => {
         </div>
         <div className="flex items-center">
           <span
-            style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110 bg-[var(--color-primary)]"
           >
             3
           </span>
@@ -51,8 +48,7 @@ const Home = () => {
         </div>
         <div className="flex items-center">
           <span
-            style={{ backgroundColor: 'var(--color-primary)' }}
-            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110"
+            className="text-white rounded-full w-8 h-7 flex items-center justify-center mr-3 hover:scale-110 bg-[var(--color-primary)]"
           >
             4
           </span>
@@ -75,9 +71,9 @@ const Home = () => {
           <div className="mb-5 lg:pl-20
           ">
             <div>
-              <VscDash className="dash text-7xl" style={{ color: 'var(--color-primary)' }} />
+              <VscDash className="dash text-7xl text-[var(--color-primary)]"/>
             </div>
-            <h1 className="text-xl" style={{ color: 'var(--color-secondary)' }}>Artisans du mois</h1>
+            <h1 className="text-xl text-[var(--color-secondary)]">Artisans du mois</h1>
           </div>
 
           <div className="flex flex-wrap gap-10
@@ -99,8 +95,8 @@ const Home = () => {
       <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
       <div
       key={artisan.id}
-      style={{ backgroundColor: 'var(--color-white)' }}
-      className="text-dark p-6 transition-all duration-300 group relative basis-full 
+      className="bg-[var(--color-white)] text-dark p-6 transition-all 
+      duration-300 group relative basis-full 
       hover:outline-[var(--color-primary)] 
       outline-none
       hover:outline
@@ -108,8 +104,8 @@ const Home = () => {
        hover:cursor-pointer"
     >
       <h2
-        className="text-lg mb-2 transition-transform duration-200 group-hover:scale-110"
-        style={{ color: 'var(--color-secondary)' }}
+        className="text-[var(--color-secondary)] text-lg mb-2 transition-transform 
+        duration-200 group-hover:scale-110"
       >
         {artisan.name}
       </h2>
@@ -128,8 +124,8 @@ const Home = () => {
      
       {/* Icône flèche */}
       <div
-        className="flex justify-center mt-4 transition-transform duration-200 group-hover:scale-125"
-        style={{ color: 'var(--color-primary)' }} 
+        className="text-[var(--color-primary)] flex justify-center 
+        mt-4 transition-transform duration-200 group-hover:scale-125"
       >
         <FaArrowRight />
         
@@ -146,10 +142,8 @@ const Home = () => {
           <div className="my-5 text-center">
             <Link to="/liste">
             <button
-              style={{ backgroundColor: 'var(--color-primary)' }}
-              className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-              onMouseEnter={(e) => (e.target.style.backgroundColor = 'var(--color-secondary)')}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = 'var(--color-primary)')}
+              className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
+              transition-all duration-300 transform hover:scale-105 hover:bg-[var(--color-secondary)]"
             >
               Tous les artisans
             </button>
