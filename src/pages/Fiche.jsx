@@ -105,24 +105,49 @@ const Fiche = () => {
               <div className="flex flex-row pb-3">
                 Nom <div style={{ color: 'var(--color-accent)' }}>*</div>:
               </div>
-                <input className="border rounded-full outline outline-1 outline-[var(--color-primary)] " 
+                <input className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
+                min-h-[35px]" 
                 style={{ backgroundColor: 'var(--color-white)' }} 
                 type="text" 
                 name="Nom" 
                 />
+              </label>
 
+              <label className="flex flex-col" >
+              <div className="flex flex-row pb-3">
+              Objet <div style={{ color: 'var(--color-accent)' }}>*</div>:
+              </div>
+                <input className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
+                min-h-[35px]" 
+                style={{ backgroundColor: 'var(--color-white)' }} 
+                type="text" 
+                name="Objet" 
+                />
+              </label>
+
+              <label className="flex flex-col" >
+              <div className="flex flex-row pb-3">
+                Votre message <div style={{ color: 'var(--color-accent)' }}>*</div>:
+              </div>
+                <input className="border rounded-3xl outline outline-1 outline-[var(--color-primary)] 
+                min-h-[150px]" 
+                style={{ backgroundColor: 'var(--color-white)' }} 
+                type="text" 
+                name="Message" 
+                />
               </label>
 
               <p className="text-xs italic ">
                 Les informations recueillies à partir de ce formulaire 
                 sont nécessaires aux services de la Région Auvergne-Rhône-Alpes pour 
-                la gestion de votre demande 
+                la gestion de votre demande. 
               </p>
               <p className="text-xs italic"
               style={{ color: 'var(--color-primary)' }}>
                 Pour en savoir plus sur la gestion de vos données et vos droits. 
               </p>
-              <input className="border rounded-full hover:scale-110 hover:cursor-pointer px-6 py-1"
+              <input className="border rounded-full hover:scale-110 hover:cursor-pointer px-8
+              min-h-[35px]"
               style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-white)' }}
               type="submit" value="Soumettre" />
               </form>
