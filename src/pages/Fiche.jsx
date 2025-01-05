@@ -128,18 +128,21 @@ const Fiche = () => {
               </form>
               </div>
 
-          {/* Bouton retour */}
-          <div className="text-center mt-5">
-            <Link to="/liste">
-              <button
-                style={{ backgroundColor: 'var(--color-primary)' }}
-                className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                Retour à la liste
-              </button>
-            </Link>
+              <div>
+              <VscDash className="dash text-7xl" style={{ color: 'var(--color-primary)' }} />
+            </div>
+            {/* Site web */}
+            <h2 className="text-xl" style={{ color: 'var(--color-secondary)' }}>
+             Site web
+            </h2>
+          
+
+          
+          <div className="my-10">
+          <strong>{artisan.website}</strong>
           </div>
-        </div>
+
+      </div>
       </div>
     </>
   );
