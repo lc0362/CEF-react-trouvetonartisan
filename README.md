@@ -1,27 +1,23 @@
 # Projet "CREER LE SITE TROUVE TON ARTISAN AVEC "REACT.JS""
 
 ## Prérequis
-- Node.js 
-- npm 
+- Node.js et npm
 - React-router-dom via la commande :
         npm install react-router-dom 
 - Installer web-vitales avec la commande :
         npm install web-vitals
-
-
-- Boostrap via la commande :
-        npm install react-bootstrap bootstrap
-- Installer les icones Bootstrap avec :
-        npm install bootstrap-icons
 - Installer les icones React avec la commande : 
         npm install react-icons
 - Installer SASS avec les commandes : 
         npm install -g sass
-        npm i tailwindcss postcss-cli autoprefixer -D
-        npx tailwind init --full
-- Installer Tailwind avec les commandes :
-        npm install -D tailwindcss
+- Installer Tailwind et ses icones avec les commandes :
+        npm install -D tailwindcss postcss autoprefixer
         npx tailwindcss init
+        npm install @headlessui/react @heroicons/react
+- Installer le package framer-motion avec la commande :
+        npm install framer-motion
+        
+
 
 npm install react-router-dom
 

@@ -8,7 +8,7 @@
 		"about": "Installation et dépannage en plomberie, chauffe-eau, et sanitaires.",
 		"email": "v.bellemare@gmail.com",
 		"website": "https://plomberie-bellemare.com",
-		"category": "Bâtiment",
+		"category": "Batiment",
 		"top": false
 	},
 	{
@@ -76,11 +76,11 @@
 		"name": "Boutot & fils",
 		"specialty": "Menuisier",
 		"note": "4.7",
-		"location": "Bourg-en-bresse",
+		"location": "Bourg-en-Bresse",
 		"about": "Fabrication et pose de meubles sur mesure, escaliers, et charpentes en bois massif.",
 		"email": "boutot-menuiserie@gmail.com",
 		"website": "https://boutot-menuiserie.com",
-		"category": "Bâtiment",
+		"category": "Batiment",
 		"top": false
 	},
 	{
@@ -104,7 +104,7 @@
 		"about": "Installation et maintenance de systèmes solaires et pompes à chaleur pour une transition énergétique durable.",
 		"email": "o-salmons@live.com",
 		"website": "",
-		"category": "Bâtiment",
+		"category": "Batiment",
 		"top": true
 	},
 	{
@@ -140,7 +140,7 @@
 		"about": "Installation électrique sécurisée et maintenance pour particuliers et professionnels.",
 		"email": "contact@mont-blanc-electricite.com",
 		"website": "https://mont-blanc-electricite.com",
-		"category": "Bâtiment",
+		"category": "Batiment",
 		"top": false
 	},
 	{
@@ -152,7 +152,7 @@
 		"about": "Service traiteur sur mesure pour réceptions, buffets, et événements privés ou professionnels.",
 		"email": "contact@truchon-traiteur.fr",
 		"website": "https://truchon-traiteur.fr",
-		"category": "Bâtiment",
+		"category": "Alimentation",
 		"top": false
 	},
 	{

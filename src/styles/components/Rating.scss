@@ -1,0 +1,20 @@
+.rating {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Styles étoiles pleines */
+  .star.full {
+    color: var(--color-primary); 
+    font-size: 1.5rem; 
+    text-shadow: 0 0 2px black; 
+  }
+  
+  /* Styles étoiles vides */
+  .star.empty {
+    color: var(--color-white); 
+    font-size: 1.5rem;
+    text-shadow: 0 0 2px black; /* Contour noir */
+    
+  }
+  
