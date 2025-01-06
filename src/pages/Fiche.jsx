@@ -54,20 +54,19 @@ const Fiche = () => {
 
   return (
     <div className="mx-auto max-w-[900px]">
-      <div className="max-w-7xl mx-auto px-10">
-        <header className="mb-5">
+      <div className="px-10">
+        <header className="">
           <div className="text-xs">
             <Breadcrumb />
           </div>
           <h1 className="text-xl py-5 text-[var(--color-secondary)]">{artisan.name}</h1>
         </header>
 
-        <section className="about mb-10">
-          <div className="lg:pl-20">
-            <VscDash className="dash text-7xl text-[var(--color-primary)]" />
+        <section className="mb-10 lg:pl-20">
+          
+            <VscDash className="dash -m-5 text-7xl text-[var(--color-primary)]" />
             <h2 className="text-xl text-[var(--color-secondary)]">A propos</h2>
-          </div>
-
+         
           <div className="my-10 space-y-5">
             <div>
               <strong>{artisan.note}</strong> <Rating note={artisan.note} />
@@ -79,14 +78,14 @@ const Fiche = () => {
               <strong>Localisation :</strong> {artisan.location}
               {departement && ` (${departement})`}.
             </p>
-          </div>
+            </div>
         </section>
 
-        <section className="contact-form">
-          <div className="lg:pl-20">
-            <VscDash className="dash text-7xl text-[var(--color-primary)]" />
+        <section className="lg:pl-20">
+
+            <VscDash className="dash -m-5 text-7xl text-[var(--color-primary)]" />
             <h2 className="text-xl text-[var(--color-secondary)]">Envoyer un mail à cet artisan</h2>
-          </div>
+          
 
           <div className="my-10 ml-10 space-y-5 max-w-[600px] lg:max-w-[500px]">
             <p className="text-xs italic">Les champs marqués d'un astérisque (*) sont requis.</p>
@@ -135,8 +134,28 @@ const Fiche = () => {
                 value="Soumettre" 
               />
             </form>
-          </div>
+            </div>
         </section>
+        <section className="lg:pl-20">
+         
+            <VscDash className="dash -m-5 text-7xl text-[var(--color-primary)]" />
+            <h2 className="text-xl text-[var(--color-secondary)]">Site web</h2>
+          
+<div className="py-10">
+          <strong>
+            <a 
+                href={artisan.website} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:underline"
+            >
+                {artisan.website}
+            </a>
+        </strong>
+        </div>
+</section>
+       
+
       </div>
     </div>
   );
