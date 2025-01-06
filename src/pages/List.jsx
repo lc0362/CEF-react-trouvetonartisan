@@ -104,7 +104,7 @@ const List = () => {
               <button
                 onClick={() => setShowAll(true)} // Met à jour l'état 
                 className="bg-[var(--color-primary)] text-white py-2 px-8 rounded-full 
-                transition-all duration-300 transform "
+                transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
               >
                 Voir plus de résultats
               </button>

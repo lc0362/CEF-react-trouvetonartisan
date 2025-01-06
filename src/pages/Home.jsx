@@ -95,8 +95,8 @@ const Home = () => {
       <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
       <div
       key={artisan.id}
-      className="z-[5] bg-[var(--color-white)] text-dark p-6 transition-all 
-      duration-300 group relative basis-full 
+      className="z-[5] bg-[var(--color-white)] text-dark p-6 
+      transition-all duration-300 group relative basis-full 
       hover:outline-[var(--color-primary)] 
       outline-none
       hover:outline
@@ -141,7 +141,7 @@ const Home = () => {
             <Link to="/liste">
             <button
               className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
-              transition-all duration-300 transform  "
+              transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
             >
               Tous les artisans
             </button>
