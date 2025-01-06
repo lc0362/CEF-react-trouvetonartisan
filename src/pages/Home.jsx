@@ -95,7 +95,7 @@ const Home = () => {
       <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
       <div
       key={artisan.id}
-      className="bg-[var(--color-white)] text-dark p-6 transition-all 
+      className="z-[5] bg-[var(--color-white)] text-dark p-6 transition-all 
       duration-300 group relative basis-full 
       hover:outline-[var(--color-primary)] 
       outline-none

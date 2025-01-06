@@ -227,10 +227,11 @@ function Header() {
             </button>
           </form>
 
-
+          <div className="relative right-[300px] z-[200] max-w-[900px]">
           {showDesktopResults && (
-  <div className="absolute top-14 bg-[var(--color-white)] shadow-lg rounded-md">
-    <ul className="max-w-[900px] z-[100]">
+            
+  <div className="absolute top-14  bg-[var(--color-white)] shadow-lg rounded-md">
+    <ul className=" min-w-[300px]">
       {artisanResult.length > 0 ? (
         artisanResult.map((artisan) => {
           // Générer un slug propre pour l'URL
@@ -242,7 +243,7 @@ function Header() {
 
           return (
             <li key={artisan.id} 
-            className="border-b px-10 py-5 flex justify-center "
+            className="border-b px-10 py-5 flex justify-center z-[200]"
             onClick={() => setShowDesktopResults(false)} 
             >
               <div className="transition duration-200 hover:scale-110">
@@ -278,7 +279,7 @@ function Header() {
       Fermer la recherche
     </div>
   </div>
-)}
+)}</div>
 
           {/* Liens de navigation desktop */}
           <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm ">
