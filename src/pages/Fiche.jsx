@@ -16,7 +16,7 @@ const Fiche = () => {
       .toLowerCase()
       .replace(/ /g, '-')
       .normalize('NFD')
-      .replace(/[̀-ͯ]/g, "");
+      .replace(/[\u0300-\u036f]/g, '');
   };
 
   const artisan = artisansData.find(
@@ -26,15 +26,11 @@ const Fiche = () => {
   if (!artisan) {
     return (
       <div className="text-center m-10 text-[var(--color-accent)]">
-        <p 
-          className="mb-10"
-        >
-          Artisan non trouvé
-        </p>
+        <p className="mb-10">Artisan non trouvé</p>
         <Link to="/liste">
           <button
-            className="text-white py-2 px-8 rounded-full transition-all duration-300 transform hover:scale-105
-            bg-[var(--color-primary)]"          >
+            className="text-white py-2 px-8 rounded-full transition-all duration-300 transform 
+            bg-[var(--color-primary)]">
             Retour à la liste
           </button>
         </Link>
@@ -57,24 +53,19 @@ const Fiche = () => {
   };
 
   return (
-    <>
-      <div className="mx-auto max-w-[900px]">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-5">
-            <div className="text-xs">
-              <Breadcrumb />
-            </div>
-            <h1 className="text-xl py-5 text-[var(--color-secondary)]">
-              {artisan.name}
-            </h1>
+    <div className="mx-auto max-w-[900px]">
+      <div className="max-w-7xl mx-auto px-10">
+        <header className="mb-5">
+          <div className="text-xs">
+            <Breadcrumb />
+          </div>
+          <h1 className="text-xl py-5 text-[var(--color-secondary)]">{artisan.name}</h1>
+        </header>
 
-            <div className="lg:pl-20">
-              <VscDash className="dash text-7xl text-[var(--color-primary)]" />
-
-              <h2 className="text-xl text-[var(--color-secondary)]">
-                A propos
-              </h2>
-            </div>
+        <section className="about mb-10">
+          <div className="lg:pl-20">
+            <VscDash className="dash text-7xl text-[var(--color-primary)]" />
+            <h2 className="text-xl text-[var(--color-secondary)]">A propos</h2>
           </div>
 
           <div className="my-10 space-y-5">
@@ -89,72 +80,65 @@ const Fiche = () => {
               {departement && ` (${departement})`}.
             </p>
           </div>
+        </section>
 
+        <section className="contact-form">
           <div className="lg:pl-20">
             <VscDash className="dash text-7xl text-[var(--color-primary)]" />
-
-            <h2 className="text-xl text-[var(--color-secondary)]">
-              Envoyer un mail à cet artisan
-            </h2>
-
-            <div className="my-10 ml-10 space-y-5 max-w-[600px] lg:max-w-[500px]">
-              <p className="text-xs italic ">Les champs marqués d'un astérisque (*) sont requis.</p>
-              <form className="space-y-5" 
-              onSubmit={handleSubmit}>
-                <label className="flex flex-col">
-                  <div className="flex flex-row pb-3">
-                    Nom <div className='text-[var(--color-accent)]'>*</div>:
-                  </div>
-                  <input 
-                    className="border rounded-full outline outline-1 outline-[var(--color-primary)] min-h-[35px]
-                    bg-[var(--color-white)]" 
-                    type="text" 
-                    name="nom" 
-                    value={formData.nom} 
-                    onChange={handleChange} 
-                  />
-                </label>
-
-                <label className="flex flex-col">
-                  <div className="flex flex-row pb-3">
-                    Objet <div className='text-[var(--color-accent)]'>*</div>:
-                  </div>
-                  <input 
-                    className="border rounded-full outline outline-1 outline-[var(--color-primary)] min-h-[35px]
-                    bg-[var(--color-white)]" 
-                    type="text" 
-                    name="objet" 
-                    value={formData.objet} 
-                    onChange={handleChange} 
-                  />
-                </label>
-
-                <label className="flex flex-col">
-                  <div className="flex flex-row pb-3">
-                    Votre message <div className='text-[var(--color-accent)]'>*</div>:
-                  </div>
-                  <textarea 
-                    className="border rounded-3xl outline outline-1 outline-[var(--color-primary)] min-h-[150px]
-                    bg-[var(--color-white)]" 
-                    name="message" 
-                    value={formData.message} 
-                    onChange={handleChange}
-                  />
-                </label>
-
-                <input 
- 
-                   className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full hover:cursor-pointer
-                  transition-all duration-300 transform hover:scale-105 hover:bg-[var(--color-secondary)] "
-                  type="submit" 
-                  value="Soumettre" 
-                />
-              </form>
-            </div>
+            <h2 className="text-xl text-[var(--color-secondary)]">Envoyer un mail à cet artisan</h2>
           </div>
-        </div>
+
+          <div className="my-10 ml-10 space-y-5 max-w-[600px] lg:max-w-[500px]">
+            <p className="text-xs italic">Les champs marqués d'un astérisque (*) sont requis.</p>
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <label className="flex flex-col">
+                <div className="flex flex-row pb-3">
+                  Nom <div className='text-[var(--color-accent)]'>*</div>:
+                </div>
+                <input 
+                  className="border rounded-full outline outline-1 outline-[var(--color-primary)] min-h-[35px] bg-[var(--color-white)]" 
+                  type="text" 
+                  name="nom" 
+                  value={formData.nom} 
+                  onChange={handleChange} 
+                />
+              </label>
+
+              <label className="flex flex-col">
+                <div className="flex flex-row pb-3">
+                  Objet <div className='text-[var(--color-accent)]'>*</div>:
+                </div>
+                <input 
+                  className="border rounded-full outline outline-1 outline-[var(--color-primary)] min-h-[35px] bg-[var(--color-white)]" 
+                  type="text" 
+                  name="objet" 
+                  value={formData.objet} 
+                  onChange={handleChange} 
+                />
+              </label>
+
+              <label className="flex flex-col">
+                <div className="flex flex-row pb-3">
+                  Votre message <div className='text-[var(--color-accent)]'>*</div>:
+                </div>
+                <textarea 
+                  className="border rounded-3xl outline outline-1 outline-[var(--color-primary)] min-h-[150px] bg-[var(--color-white)]" 
+                  name="message" 
+                  value={formData.message} 
+                  onChange={handleChange}
+                />
+              </label>
+
+              <input 
+                className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full hover:cursor-pointer transition-all duration-300 transform hover:bg-[var(--color-secondary)] "
+                type="submit" 
+                value="Soumettre" 
+              />
+            </form>
+          </div>
+        </section>
       </div>
-    </>
+    </div>
   );
 };
 

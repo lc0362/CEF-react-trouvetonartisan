@@ -38,4 +38,16 @@
   b, strong {
     font-family: 'Graphik-Bold', 'Poppins-Bold', Arial, sans-serif;
   }
+
+  Link:hover {
+    color: var(--color-secondary);
+  }
+
+  button:hover {
+    background-color: var(--color-secondary);
+  }
+
+  .italic {
+    font-family: 'Graphik-Italic', Arial, sans-serif;
+  }
 }

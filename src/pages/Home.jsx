@@ -104,8 +104,7 @@ const Home = () => {
        hover:cursor-pointer"
     >
       <h2
-        className="text-[var(--color-secondary)] text-lg mb-2 transition-transform 
-        duration-200 group-hover:scale-110"
+        className="text-[var(--color-secondary)] text-lg mb-2"
       >
         {artisan.name}
       </h2>
@@ -124,8 +123,7 @@ const Home = () => {
      
       {/* Icône flèche */}
       <div
-        className="text-[var(--color-primary)] flex justify-center 
-        mt-4 transition-transform duration-200 group-hover:scale-125"
+        className="text-[var(--color-primary)] flex justify-center mt-4 group-hover:text-[var(--color-secondary)]"
       >
         <FaArrowRight />
         
@@ -143,7 +141,7 @@ const Home = () => {
             <Link to="/liste">
             <button
               className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
-              transition-all duration-300 transform hover:scale-105 hover:bg-[var(--color-secondary)]"
+              transition-all duration-300 transform  "
             >
               Tous les artisans
             </button>

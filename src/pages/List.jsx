@@ -67,8 +67,7 @@ const List = () => {
                   >
                     <Link to={`/fiche/${artisanSlug}`}>
                       <h2
-                        className="text-[var(--color-secondary)] text-lg mb-2 
-                        transition-transform duration-200 group-hover:scale-110"
+                        className="text-[var(--color-secondary)] text-lg mb-2"
                       >
                         {artisan.name}
                       </h2>
@@ -85,8 +84,7 @@ const List = () => {
 
                       {/* Icône flèche */}
                      <div
-                             className="text-[var(--color-primary)] flex justify-center mt-4 
-                             transition-transform duration-200 group-hover:scale-125"
+                             className="text-[var(--color-primary)] flex justify-center mt-4 group-hover:text-[var(--color-secondary)]"
                            >
                              <FaArrowRight />
                              
@@ -106,7 +104,7 @@ const List = () => {
               <button
                 onClick={() => setShowAll(true)} // Met à jour l'état 
                 className="bg-[var(--color-primary)] text-white py-2 px-8 rounded-full 
-                transition-all duration-300 transform hover:scale-110 hover:bg-[var(--color-secondary)]"
+                transition-all duration-300 transform "
               >
                 Voir plus de résultats
               </button>
