@@ -16,6 +16,9 @@
         npm install @headlessui/react @heroicons/react
 - Installer le package framer-motion avec la commande :
         npm install framer-motion
+- Installer DomPurify avec la commande :
+        npm install dompurify
+
         
 
 
