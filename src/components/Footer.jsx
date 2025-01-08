@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[var(--color-primary)] text-[var(--color-white)]">
-      <div className="mt-8 text-center">
+    <footer className="footer mt-8 bg-[var(--color-primary)] text-[var(--color-white)]">
+      <div className="text-center">
           <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
         </div>
         <div className="mx-auto max-w-[900px] lg:max-w-[1100px] px-10">

@@ -1,4 +1,7 @@
 @use './App';
+@use './Index';
+@use './pages/Home';
+@use './components/Rating';
 
 @tailwind base;
 @tailwind components;
