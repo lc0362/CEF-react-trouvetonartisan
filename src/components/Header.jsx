@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { RiCloseLargeFill } from "react-icons/ri";
 import artisansData from '../components/data/datas.json';
 import { FaArrowRight } from "react-icons/fa";
-
+import DOMPurify from 'dompurify';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);  // État pour gérer l'ouverture et fermeture du menu
@@ -14,8 +14,6 @@ function Header() {
   const isNotHomePage = location.pathname !== '/'; // Variable pour repérer si l'url n'est pas la page d'accueil
   const [searchVisible, setSearchVisible] = useState(false); // Barre de recherche non visible par défaut
   const [showDesktopResults, setShowDesktopResults] = useState(false); // Résultats non visibles par défaut
-
-
   const [searchTerm, setSearchTerm] = useState(""); // Stocker la valeur de la recherche
 
   const normalizeString = (str) => {
@@ -26,10 +24,11 @@ function Header() {
       .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caractères spéciaux
   };
   
+  
 
   const artisanResult = searchTerm.length >= 0
     ? artisansData.filter((artisan) => {
-        const normalizedSearchTerm = normalizeString(searchTerm);
+      const normalizedSearchTerm = normalizeString(searchTerm);
         return (
           normalizeString(artisan.name).includes(normalizedSearchTerm) ||
           normalizeString(artisan.specialty).includes(normalizedSearchTerm) ||
@@ -37,11 +36,6 @@ function Header() {
         );
       }).slice(0, 4)
     : [];
-
- 
-  
-  
-
 
   const menuVars = {
     initial:{
@@ -121,7 +115,7 @@ function Header() {
                 placeholder="Entrez votre recherche (nom, métier ou ville)"
                 className="w-full p-2 border-none focus:outline-none"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => setSearchTerm(DOMPurify.sanitize(e.target.value))}
               />
               <button 
                 type="button"
@@ -211,7 +205,7 @@ function Header() {
               placeholder="Rechercher"
               maxLength="40"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} 
+              onChange={(e) => setSearchTerm(DOMPurify.sanitize(e.target.value))}
               className="border-none px-2 py-1 focus:outline-none"
             />
             <button 
