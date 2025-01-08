@@ -117,17 +117,16 @@ function Header() {
                 type="text"
                 name="searchBar"
                 id="searchBar"
+                maxLength="30"
                 placeholder="Entrez votre recherche (nom, métier ou ville)"
                 className="w-full p-2 border-none focus:outline-none"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              
               <button 
                 type="button"
                 className="p-2 text-[var(--color-primary)]"
                 aria-expanded={searchVisible}
-                
               >
                 <CiSearch size={30} />
               </button >
@@ -210,6 +209,7 @@ function Header() {
               type="text" 
               aria-label="Search"
               placeholder="Rechercher"
+              maxLength="40"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} 
               className="border-none px-2 py-1 focus:outline-none"

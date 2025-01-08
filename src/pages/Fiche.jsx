@@ -104,7 +104,7 @@ const Fiche = () => {
                   Nom <div className='text-[var(--color-accent)]'>*</div>:
                 </div>
                 <input 
-                  maxLength="100"
+                  maxLength="40"
                   className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
                   min-h-[35px] bg-[var(--color-white)]" 
                   type="text" 
@@ -119,7 +119,7 @@ const Fiche = () => {
                   Objet <div className='text-[var(--color-accent)]'>*</div>:
                 </div>
                 <input 
-                  maxLength="100"
+                  maxLength="40"
                   className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
                   min-h-[35px] bg-[var(--color-white)]" 
                   type="text" 

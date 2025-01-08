@@ -24,7 +24,7 @@ const List = () => {
     <>
     
       <div className="mx-auto max-w-[900px]">
-      <div className="mx-auto px-10 lg:px-0 py-5
+      <section className="mx-auto px-10 lg:px-0 py-5
       ">
 
         
@@ -66,6 +66,7 @@ const List = () => {
                     outline-none hover:outline hover:outline-4 hover:cursor-pointer"
                   >
                     <Link to={`/fiche/${artisanSlug}`}>
+                    <article>
                       <h2
                         className="text-[var(--color-secondary)] text-lg mb-2"
                       >
@@ -89,6 +90,7 @@ const List = () => {
                              <FaArrowRight />
                              
                            </div>
+                        </article>
                     </Link>
                   </div>
                 );
@@ -110,7 +112,7 @@ const List = () => {
               </button>
             </div>
           )}
-        </div>
+        </section>
       </div>
     </>
   );

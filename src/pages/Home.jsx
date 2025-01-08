@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-     <div className="text-white pt-8 bg-[var(--color-secondary)]">
+     <section className="text-white pt-8 bg-[var(--color-secondary)]">
   <div className="max-w-lg mx-auto md:max-w-[800px] p-5 ">
     <div className="md:flex md:items-center md:space-x-5 ">
       <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px] ">
@@ -57,15 +57,12 @@ const Home = () => {
       </div>
     </div>
   </div>
-
-
-
   <div className="mt-8 text-center">
           <img src="/bulle-haut.png" alt="Bulle d'information" className="mx-auto" />
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-[900px]">
+      <section className="mx-auto max-w-[900px]">
         <div className="max-w-7xl mx-auto px-10 lg:px-0
          ">
           <div className="mb-5 lg:pl-20
@@ -92,7 +89,9 @@ const Home = () => {
   .replace(/[\u0300-\u036f]/g, ""); // Supprime les accents et caracteres speciaux
 
     return (
+      
       <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
+        <article>
       <div
       key={artisan.id}
       className="z-[5] bg-[var(--color-white)] text-dark p-6 
@@ -129,6 +128,7 @@ const Home = () => {
         
       </div>
     </div>
+    </article>
     </Link>
     
 
@@ -149,7 +149,7 @@ const Home = () => {
 
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
