@@ -134,20 +134,16 @@ const Home = () => {
 
     );
   })}
+</div><div className="my-5 pt-5 text-center">
+  <Link
+    to="/liste"
+    className="text-white bg-[var(--color-primary)]  py-2 px-8 rounded-full 
+    transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
+  >
+    Tous les artisans
+  </Link>
 </div>
 
-
-          <div className="my-5 text-center">
-            <Link to="/liste">
-            <button
-              className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
-              transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
-            >
-              Tous les artisans
-            </button>
-            </Link>
-
-          </div>
         </div>
       </section>
     </>

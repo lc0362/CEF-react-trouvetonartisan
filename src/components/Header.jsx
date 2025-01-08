@@ -99,7 +99,7 @@ function Header() {
               setSearchVisible(!searchVisible); // Utilisation directe de l'état
             }}
           >
-            <CiSearch size={30} />
+            <CiSearch size={30} attr={{ id: undefined }} />
           </button>
         )}
          {searchVisible && ( // Si la barre de recherche est visible
@@ -110,7 +110,6 @@ function Header() {
               <input 
                 type="text"
                 name="searchBar"
-                id="searchBar"
                 maxLength="30"
                 placeholder="Entrez votre recherche (nom, métier ou ville)"
                 className="w-full p-2 border-none focus:outline-none"
@@ -171,24 +170,23 @@ function Header() {
 
           {/* Menu burger */}
           <button
-            className="navbar-toggler border-none flex items-center"
-            type="button"
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <div className="flex flex-col items-center justify-center  text-[var(--color-primary)]">
-              <HiMenuAlt2 
-                size={40}
-                className="transform rotate-180" 
-              />
-              <span 
-                className="menu-text text-xs text-[var(--color-primary)]"
-              >
-                Menu
-              </span>
-            </div>
-          </button>
+  className="navbar-toggler border-none flex items-center"
+  type="button"
+  aria-label="Toggle navigation"
+  aria-expanded={menuOpen}
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  <span className="flex flex-col items-center justify-center text-[var(--color-primary)]">
+    <HiMenuAlt2 
+      size={40}
+      className="transform rotate-180" 
+    />
+    <span className="menu-text text-xs text-[var(--color-primary)]">
+      Menu
+    </span>
+  </span>
+</button>
+
         </div>
 
         <div className="header-lg-right hidden lg:flex flex-col items-end">
@@ -202,6 +200,7 @@ function Header() {
             <input 
               type="text" 
               aria-label="Search"
+              name="searchBar"
               placeholder="Rechercher"
               maxLength="40"
               value={searchTerm}
@@ -217,7 +216,7 @@ function Header() {
                 }
               }}
             >
-              <CiSearch size={20} />
+              <CiSearch size={20} attr={{ id: undefined }}/>
             </button>
           </form>
 

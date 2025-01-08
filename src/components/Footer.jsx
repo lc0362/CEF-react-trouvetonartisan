@@ -33,21 +33,22 @@ const Footer = () => {
                 <line x1="1000" y1="0" x2="0" y2="0" stroke="white" /></svg>
                 </div>
 
-<small className='pb-30'>
-  <div className='flex flex-wrap text-balance gap-x-12 md:gap-x-12
+                <small className='block pb-30 text-white'>
+  <span className='flex flex-wrap text-balance gap-x-12 md:gap-x-12
   lg:gap-x-4 lg:place-content-evenly gap-y-5 lg:text-xs lg:max-w-[900px] lg:mx-auto'>
-<Link to="#">Mentions légales</Link>  
-<Link to="#">Données personnelles</Link>
-<Link to="#">Données Accessibilité : partiellement conforme</Link>
-<Link to="#">Presse</Link>
-<Link to="#">Marchés publics</Link>
-<Link to="#">Venir à la Région</Link>
-<Link to="#">Contacts</Link>
-</div>
-<div className='py-5 lg:max-w-[900px] lg:mx-auto lg:text-center lg:text-xs'>
-<Link to="#">Gestion des cookies</Link>
-</div>
+    <Link to="#">Mentions légales</Link>  
+    <Link to="#">Données personnelles</Link>
+    <Link to="#">Données Accessibilité : partiellement conforme</Link>
+    <Link to="#">Presse</Link>
+    <Link to="#">Marchés publics</Link>
+    <Link to="#">Venir à la Région</Link>
+    <Link to="#">Contacts</Link>
+  </span>
+  <span className='block py-5 lg:max-w-[900px] lg:mx-auto lg:text-center lg:text-xs'>
+    <Link to="#">Gestion des cookies</Link>
+  </span>
 </small>
+
 
 
         

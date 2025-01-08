@@ -99,25 +99,26 @@ const Fiche = () => {
           <div className="my-10 ml-10 space-y-5 max-w-[600px] lg:max-w-[500px]">
             <p className="text-xs italic">Les champs marqués d'un astérisque (*) sont requis.</p>
             <form className="space-y-5" onSubmit={handleSubmit}>
-              <label className="flex flex-col">
-                <div className="flex flex-row pb-3">
-                  Nom <div className='text-[var(--color-accent)]'>*</div>:
-                </div>
-                <input 
-                  maxLength="40"
-                  className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
-                  min-h-[35px] bg-[var(--color-white)]" 
-                  type="text" 
-                  name="nom" 
-                  value={formData.nom} 
-                  onChange={handleChange} 
-                />
-              </label>
+            <label className="flex flex-col">
+            <span className="flex flex-row pb-3">
+              Nom <span className='text-[var(--color-accent)]'>*</span>:
+            </span>
+            <input 
+              maxLength="40"
+              className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
+              min-h-[35px] bg-[var(--color-white)]" 
+              type="text" 
+              name="nom" 
+              value={formData.nom} 
+              onChange={handleChange} 
+            />
+          </label>
+
 
               <label className="flex flex-col">
-                <div className="flex flex-row pb-3">
-                  Objet <div className='text-[var(--color-accent)]'>*</div>:
-                </div>
+                <span className="flex flex-row pb-3">
+                  Objet <span className='text-[var(--color-accent)]'>*</span>:
+                </span>
                 <input 
                   maxLength="40"
                   className="border rounded-full outline outline-1 outline-[var(--color-primary)] 
@@ -130,9 +131,9 @@ const Fiche = () => {
               </label>
 
               <label className="flex flex-col">
-                <div className="flex flex-row pb-3">
-                  Votre message <div className='text-[var(--color-accent)]'>*</div>:
-                </div>
+                <span className="flex flex-row pb-3">
+                  Votre message <span className='text-[var(--color-accent)]'>*</span>:
+                </span>
                 <textarea 
                   maxLength="500"
                   className="border rounded-3xl outline outline-1 outline-[var(--color-primary)] 
