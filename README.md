@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Projet "CREER LE SITE TROUVE TON ARTISAN AVEC "REACT.JS""
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prérequis
+- Node.js et npm
+- React-router-dom via la commande :
+        npm install react-router-dom 
+- Installer web-vitales avec la commande :
+        npm install web-vitals
+- Installer les icones React avec la commande : 
+        npm install react-icons
+- Installer SASS avec les commandes : 
+        npm install -g sass
+- Installer Tailwind et ses icones avec les commandes :
+        npm install -D tailwindcss postcss autoprefixer
+        npx tailwindcss init
+        npm install @headlessui/react @heroicons/react
+- Installer le package framer-motion avec la commande :
+        npm install framer-motion
+- Installer DomPurify avec la commande :
+        npm install dompurify
 
 ## Available Scripts
 

@@ -1,0 +1,49 @@
+@use  './variables';
+
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../fonts/Graphik-Regular-Trial.woff') format('woff'),
+       url('../fonts/Graphik-Regular-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Graphik-Italic';
+  src: url('../fonts/Graphik-RegularItalic-Trial.woff') format('woff'),
+       url('../fonts/Graphik-RegularItalic-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Graphik-Bold';
+  src: url('../fonts/Graphik-Bold-Trial.woff') format('woff'),
+       url('../fonts/Graphik-Bold-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../fonts/Poppins-Bold.woff') format('woff'),
+       url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+
+
+.App {
+  font-family: 'Graphik', Arial, sans-serif;
+  cursor: default;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Graphik-Bold', 'Poppins-Bold', Arial, sans-serif;
+  }
+
+  b {
+    font-family: 'Graphik-Bold', 'Poppins-Bold', Arial, sans-serif;
+  }
+
+  Link:hover {
+    color: var(--color-secondary);
+  }
+
+  .italic {
+    font-family: 'Graphik-Italic', Arial, sans-serif;
+  }
+}
