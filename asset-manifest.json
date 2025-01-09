@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.534ef9ac.css",
+    "main.js": "/static/js/main.c5c158c6.js",
+    "static/js/488.843bdefa.chunk.js": "/static/js/488.843bdefa.chunk.js",
+    "static/media/Poppins-Bold.ttf": "/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/Graphik-Bold-Trial.otf": "/static/media/Graphik-Bold-Trial.e18ee547c1c764d030bf.otf",
+    "static/media/Graphik-RegularItalic-Trial.otf": "/static/media/Graphik-RegularItalic-Trial.ddb8880b48b081819d1c.otf",
+    "static/media/Graphik-Regular-Trial.otf": "/static/media/Graphik-Regular-Trial.e7f4046c1937c259c933.otf",
+    "static/media/Poppins-Bold.woff": "/static/media/Poppins-Bold.d43f2660fae51d565685.woff",
+    "static/media/Graphik-Bold-Trial.woff": "/static/media/Graphik-Bold-Trial.00fe7eace77831e75119.woff",
+    "static/media/Graphik-RegularItalic-Trial.woff": "/static/media/Graphik-RegularItalic-Trial.f254821a9a0c77244cdb.woff",
+    "static/media/Graphik-Regular-Trial.woff": "/static/media/Graphik-Regular-Trial.510c03fcd932bb962bc5.woff",
+    "index.html": "/index.html",
+    "main.534ef9ac.css.map": "/static/css/main.534ef9ac.css.map",
+    "main.c5c158c6.js.map": "/static/js/main.c5c158c6.js.map",
+    "488.843bdefa.chunk.js.map": "/static/js/488.843bdefa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.534ef9ac.css",
+    "static/js/main.c5c158c6.js"
+  ]
+}
