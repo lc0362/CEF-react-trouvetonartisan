@@ -65,7 +65,7 @@ const List = () => {
                     duration-300 group relative basis-full lg:basis-[32%] hover:outline-[var(--color-primary)] 
                     outline-none hover:outline hover:outline-4 hover:cursor-pointer"
                   >
-                    <Link to={`/fiche/${artisanSlug}`}>
+                    <Link to={`/trouvetonartisan/fiche/${artisanSlug}`}>
                     <article>
                       <h2
                         className="text-[var(--color-secondary)] text-lg mb-2"

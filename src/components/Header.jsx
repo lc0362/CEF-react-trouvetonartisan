@@ -77,7 +77,7 @@ function Header() {
     <nav className="bg-white mx-auto max-w-[900px] px-10 z-[100]">
       <div className="w-full py-2 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/trouvetonartisan/" className="flex items-center">
           <img 
             src="/Logo.png" 
             alt="Logo Trouve ton artisan" 
@@ -141,7 +141,7 @@ function Header() {
     return (
       <div key={artisan.id} className="flex-col border-b p-10">
         <div className="hover:scale-110">
-          <Link to={`/fiche/${artisanSlug}`}>
+          <Link to={`/trouvetonartisan/fiche/${artisanSlug}`}>
             <p className="text-lg font-bold text-[var(--color-secondary)]">{artisan.name}</p>
             <p className="text-sm text-[var(--color-secondary)]">{artisan.specialty} - {artisan.location}</p>
             <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
@@ -240,7 +240,7 @@ function Header() {
             onClick={() => setShowDesktopResults(false)} 
             >
               <div className="transition duration-200 hover:scale-110">
-              <Link to={`/fiche/${artisanSlug}`} className="block">
+              <Link to={`trouvetonartisan/fiche/${artisanSlug}`} className="block">
                 <p className="text-lg font-bold text-[var(--color-secondary)]">
                   {artisan.name}
                 </p>
@@ -277,29 +277,29 @@ function Header() {
           {/* Liens de navigation desktop */}
           <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm ">
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
-              to="/liste/batiment"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/batiment' ? 'underline font-bold' : ''}`} 
+              to="/trouvetonartisan/liste/batiment"
             >
               Bâtiment
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
-              to="/liste/services"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/services' ? 'underline font-bold' : ''}`} 
+              to="/trouvetonartisan/liste/services"
             >
               Services
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
-              to="/liste/fabrication"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/fabrication' ? 'underline font-bold' : ''}`} 
+              to="/trouvetonartisan/liste/fabrication"
             >
               Fabrication
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
-              to="/liste/alimentation"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/alimentation' ? 'underline font-bold' : ''}`} 
+              to="/trouvetonartisan/liste/alimentation"
             >
               Alimentation
             </Link>
@@ -334,8 +334,8 @@ function Header() {
 <div className="pb-10">Choisissez une catégorie d'artisanat :</div>
 
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
-            to="/liste/batiment"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/batiment' ? 'underline font-bold' : ''}`} 
+            to="/trouvetonartisan/liste/batiment"
           >
             Bâtiment
           </Link>
@@ -343,22 +343,22 @@ function Header() {
         
         
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
-            to="/liste/services"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/services' ? 'underline font-bold' : ''}`} 
+            to="/trouvetonartisan/liste/services"
           >
             Services
           </Link>
        
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
-            to="/liste/fabrication"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/fabrication' ? 'underline font-bold' : ''}`} 
+            to="/trouvetonartisan/liste/fabrication"
           >
             Fabrication
           </Link>
        
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
-            to="/liste/alimentation"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisan/liste/alimentation' ? 'underline font-bold' : ''}`} 
+            to="/trouvetonartisan/liste/alimentation"
           >
             Alimentation
           </Link>

@@ -6,7 +6,7 @@ const Breadcrumb = () => {
     <nav
       className="breadcrumb flex items-center space-x-2 text-[var(--color-secondary)] relative z-2"
     >
-      <Link to="/" className="hover:underline">
+      <Link to="/trouvetonartisan/" className="hover:underline">
         Accueil
       </Link>
     </nav>

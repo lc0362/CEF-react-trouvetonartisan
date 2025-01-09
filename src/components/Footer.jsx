@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="mx-auto max-w-[900px] lg:max-w-[1100px] px-10">
           <div className="flex flex-col  lg:flex-row lg:gap-x-36">
 
-        <Link to="/" className="flex items-center lg:place-items-start">
+        <Link to="/trouvetonartisan/" className="flex items-center lg:place-items-start">
           <img 
             src="/Logo-blanc.png" 
             alt="Logo Trouve ton artisan" 

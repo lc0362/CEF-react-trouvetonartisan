@@ -90,7 +90,7 @@ const Home = () => {
 
     return (
       
-      <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
+      <Link key={artisan.id} to={`/trouvetonartisan/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
         <article>
       <div
       key={artisan.id}
@@ -136,7 +136,7 @@ const Home = () => {
   })}
 </div><div className="my-5 pt-5 text-center">
   <Link
-    to="/liste"
+    to="/trouvetonartisan/liste"
     className="text-white bg-[var(--color-primary)]  py-2 px-8 rounded-full 
     transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
   >
