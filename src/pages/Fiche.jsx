@@ -37,7 +37,7 @@ const Fiche = () => {
     return (
       <div className="text-center m-10 text-[var(--color-accent)]">
         <p className="mb-10">Artisan non trouvé</p>
-        <Link to="/trouvetonartisan/liste">
+        <Link to="/liste">
           <button
             className="text-white py-2 px-8 rounded-full transition-all duration-300 transform 
             bg-[var(--color-primary)] hover:bg-[var(--color-secondary)]">

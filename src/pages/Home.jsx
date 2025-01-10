@@ -17,9 +17,11 @@ const Home = () => {
      <section className="text-white pt-8 bg-[var(--color-secondary)]">
   <div className="max-w-lg mx-auto md:max-w-[800px] p-5 ">
     <div className="md:flex md:items-center md:space-x-5 ">
-      <h1 className="text-2xl mb-6 md:mb-0 flex items-center justify-center md:text-center md:mx-15 md:mr-10 md:max-w-[250px] ">
+      <div className="flex flex-col">
+      <h1 className="text-2xl mb-6 md:mb-0 justify-center items-center text-center md:mr-10 md:max-w-[250px]">
         Comment trouver mon artisan ?
       </h1>
+      </div>
       <div className="space-y-5 text-left ">
         <div className="flex items-center 
         ">
@@ -58,7 +60,7 @@ const Home = () => {
     </div>
   </div>
   <div className="mt-8 text-center">
-          <img src="/bulle-haut.png" alt="Bulle d'information" className="mx-auto" />
+          <img src="/CEF-react-trouvetonartisan/bulle-haut.png" alt="Bulle d'information haut" className="mx-auto" />
         </div>
       </section>
 
@@ -90,7 +92,7 @@ const Home = () => {
 
     return (
       
-      <Link key={artisan.id} to={`/trouvetonartisan/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
+      <Link key={artisan.id} to={`/fiche/${artisanSlug}`} className="block lg:basis-[32%]">
         <article>
       <div
       key={artisan.id}
@@ -136,7 +138,7 @@ const Home = () => {
   })}
 </div><div className="my-5 pt-5 text-center">
   <Link
-    to="/trouvetonartisan/liste"
+    to="/liste"
     className="text-white bg-[var(--color-primary)]  py-2 px-8 rounded-full 
     transition-all duration-300 transform hover:bg-[var(--color-secondary)]"
   >

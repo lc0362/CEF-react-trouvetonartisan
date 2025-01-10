@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <footer className="footer mt-8 bg-[var(--color-primary)] text-[var(--color-white)]">
       <div className="text-center">
-          <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
+          <img src="/CEF-react-trouvetonartisan/bulle-bas.png" alt="Bulle d'information bas" className="mx-auto" />
         </div>
         <div className="mx-auto max-w-[900px] lg:max-w-[1100px] px-10">
           <div className="flex flex-col  lg:flex-row lg:gap-x-36">
 
-        <Link to="/trouvetonartisan/" className="flex items-center lg:place-items-start">
+        <Link to="/" className="flex items-center lg:place-items-start">
           <img 
-            src="/Logo-blanc.png" 
+            src="/CEF-react-trouvetonartisan/Logo-blanc.png" 
             alt="Logo Trouve ton artisan" 
             className="h-auto max-w-[250px] py-3 "
           />
@@ -48,11 +48,6 @@ const Footer = () => {
     <Link to="#">Gestion des cookies</Link>
   </span>
 </small>
-
-
-
-        
-      
       
       </div>
     </footer>

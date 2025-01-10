@@ -15,9 +15,9 @@ const Page404 = () => {
 
       <div className="my-5 text-center">
       <div className="mx-auto max-w-[200px] m-5">
-          <img src="/404-error.png" alt="Point d'exclamation dans un triangle" className="mx-auto" />
+          <img src="/CEF-react-trouvetonartisan/404-error.png" alt="Point d'exclamation dans un triangle" className="mx-auto" />
         </div>
-        <Link to="/trouvetonartisan/" className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
+        <Link to="/" className="text-white bg-[var(--color-primary)] py-2 px-8 rounded-full 
               transition-all duration-300 transform hover:bg-[var(--color-secondary)]">
             
               Retourner vers la page d'accueil

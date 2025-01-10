@@ -13,10 +13,10 @@ function App() {
     <div className="App">
        <Header />
       <Routes>
-        <Route path="/trouvetonartisan/" element={<Home />} />
-        <Route path="/trouvetonartisan/liste" element={<List />} />
-        <Route path="/trouvetonartisan/liste/:category" element={<List />} />
-        <Route path="/trouvetonartisan/fiche/:name" element={<Fiche />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/liste" element={<List />} />
+        <Route path="/liste/:category" element={<List />} />
+        <Route path="/fiche/:name" element={<Fiche />} />
         <Route path="/*" element={<Page404 />} />
       </Routes>
         <BackToTop />

@@ -74,14 +74,14 @@ function Header() {
 
   return (
     <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5 `}>
-    <nav className="bg-white mx-auto max-w-[900px] px-10 z-[100]">
-      <div className="w-full py-2 flex items-center justify-between h-16">
+    <nav className="bg-white mx-auto max-w-[900px] z-[100]">
+      <div className="w-full p-2 flex items-center place-content-between h-16">
         {/* Logo */}
-        <Link to="/trouvetonartisan/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img 
-            src="/Logo.png" 
+            src="/CEF-react-trouvetonartisan/Logo.png" 
             alt="Logo Trouve ton artisan" 
-            className="navbar-logo h-auto max-w-[250px]"
+            className="navbar-logo h-auto max-w-[220px]"
           />
         </Link>
 
@@ -141,7 +141,7 @@ function Header() {
     return (
       <div key={artisan.id} className="flex-col border-b p-10">
         <div className="hover:scale-110">
-          <Link to={`/trouvetonartisan/fiche/${artisanSlug}`}>
+          <Link to={`//fiche/${artisanSlug}`}>
             <p className="text-lg font-bold text-[var(--color-secondary)]">{artisan.name}</p>
             <p className="text-sm text-[var(--color-secondary)]">{artisan.specialty} - {artisan.location}</p>
             <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
@@ -209,7 +209,7 @@ function Header() {
             />
             <button 
               aria-label="Rechercher"
-              className="px-2 text-[var(--color-primary)]"
+              className="p-2 text-[var(--color-primary)]"
               onClick={() => {
                 if (searchTerm.trim() !== "") {
                   setShowDesktopResults(!showDesktopResults);
@@ -240,7 +240,7 @@ function Header() {
             onClick={() => setShowDesktopResults(false)} 
             >
               <div className="transition duration-200 hover:scale-110">
-              <Link to={`trouvetonartisan/fiche/${artisanSlug}`} className="block">
+              <Link to={`/fiche/${artisanSlug}`} className="block">
                 <p className="text-lg font-bold text-[var(--color-secondary)]">
                   {artisan.name}
                 </p>
@@ -277,29 +277,29 @@ function Header() {
           {/* Liens de navigation desktop */}
           <nav className="navbar-nav flex flex-row items-center justify-end w-full space-x-4 pt-2 text-sm ">
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/batiment' ? 'underline font-bold' : ''}`} 
-              to="/trouvetonartisan/liste/batiment"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+              to="/liste/batiment"
             >
               Bâtiment
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/services' ? 'underline font-bold' : ''}`} 
-              to="/trouvetonartisan/liste/services"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+              to="/liste/services"
             >
               Services
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/fabrication' ? 'underline font-bold' : ''}`} 
-              to="/trouvetonartisan/liste/fabrication"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+              to="/liste/fabrication"
             >
               Fabrication
             </Link>
 
             <Link 
-              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/trouvetonartisan/liste/alimentation' ? 'underline font-bold' : ''}`} 
-              to="/trouvetonartisan/liste/alimentation"
+              className={`nav-link text-[var(--secondary-color)] hover:underline ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+              to="/liste/alimentation"
             >
               Alimentation
             </Link>
@@ -327,15 +327,15 @@ function Header() {
       >
         
 <div className="pb-10 text-center">
-          <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
+          <img src="/CEF-react-trouvetonartisan/bulle-bas.png" alt="Bulle d'information menu" className="mx-auto" />
         </div>
         
 
 <div className="pb-10">Choisissez une catégorie d'artisanat :</div>
 
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/batiment' ? 'underline font-bold' : ''}`} 
-            to="/trouvetonartisan/liste/batiment"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/batiment' ? 'underline font-bold' : ''}`} 
+            to="/liste/batiment"
           >
             Bâtiment
           </Link>
@@ -343,22 +343,22 @@ function Header() {
         
         
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/services' ? 'underline font-bold' : ''}`} 
-            to="/trouvetonartisan/liste/services"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/services' ? 'underline font-bold' : ''}`} 
+            to="/liste/services"
           >
             Services
           </Link>
        
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisanliste/fabrication' ? 'underline font-bold' : ''}`} 
-            to="/trouvetonartisan/liste/fabrication"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/fabrication' ? 'underline font-bold' : ''}`} 
+            to="/liste/fabrication"
           >
             Fabrication
           </Link>
        
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/trouvetonartisan/liste/alimentation' ? 'underline font-bold' : ''}`} 
-            to="/trouvetonartisan/liste/alimentation"
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '//liste/alimentation' ? 'underline font-bold' : ''}`} 
+            to="/liste/alimentation"
           >
             Alimentation
           </Link>
