@@ -74,14 +74,14 @@ function Header() {
 
   return (
     <div className={`${isNotHomePage ? 'border-b-4 border-[var(--color-dark)]-400 mb-5' : ''}  py-5 `}>
-    <nav className="bg-white mx-auto max-w-[900px] px-10 z-[100]">
-      <div className="w-full py-2 flex items-center justify-between h-16">
+    <nav className="bg-white mx-auto max-w-[900px] z-[100]">
+      <div className="w-full p-2 flex items-center place-content-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img 
-            src="/Logo.png" 
+            src="/CEF-react-trouvetonartisan/Logo.png" 
             alt="Logo Trouve ton artisan" 
-            className="navbar-logo h-auto max-w-[250px]"
+            className="navbar-logo h-auto max-w-[220px]"
           />
         </Link>
 
@@ -141,7 +141,7 @@ function Header() {
     return (
       <div key={artisan.id} className="flex-col border-b p-10">
         <div className="hover:scale-110">
-          <Link to={`/fiche/${artisanSlug}`}>
+          <Link to={`//fiche/${artisanSlug}`}>
             <p className="text-lg font-bold text-[var(--color-secondary)]">{artisan.name}</p>
             <p className="text-sm text-[var(--color-secondary)]">{artisan.specialty} - {artisan.location}</p>
             <div className="flex justify-center mt-4 transition-transform duration-200 text-[var(--color-primary)]">
@@ -209,7 +209,7 @@ function Header() {
             />
             <button 
               aria-label="Rechercher"
-              className="px-2 text-[var(--color-primary)]"
+              className="p-2 text-[var(--color-primary)]"
               onClick={() => {
                 if (searchTerm.trim() !== "") {
                   setShowDesktopResults(!showDesktopResults);
@@ -327,7 +327,7 @@ function Header() {
       >
         
 <div className="pb-10 text-center">
-          <img src="/bulle-bas.png" alt="Bulle d'information" className="mx-auto" />
+          <img src="/CEF-react-trouvetonartisan/bulle-bas.png" alt="Bulle d'information menu" className="mx-auto" />
         </div>
         
 
@@ -357,7 +357,7 @@ function Header() {
           </Link>
        
           <Link 
-            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '/liste/alimentation' ? 'underline font-bold' : ''}`} 
+            className={`nav-link uppercase text-3xl hover:underline px-20 py-5 ${location.pathname === '//liste/alimentation' ? 'underline font-bold' : ''}`} 
             to="/liste/alimentation"
           >
             Alimentation
