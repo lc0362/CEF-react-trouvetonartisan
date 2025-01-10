@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/CEF-react-trouvetonartisan/static/css/main.e084a795.css",
+    "main.js": "/CEF-react-trouvetonartisan/static/js/main.f796be3b.js",
+    "static/js/488.843bdefa.chunk.js": "/CEF-react-trouvetonartisan/static/js/488.843bdefa.chunk.js",
+    "static/media/Poppins-Bold.ttf": "/CEF-react-trouvetonartisan/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/Graphik-Bold-Trial.otf": "/CEF-react-trouvetonartisan/static/media/Graphik-Bold-Trial.e18ee547c1c764d030bf.otf",
+    "static/media/Graphik-RegularItalic-Trial.otf": "/CEF-react-trouvetonartisan/static/media/Graphik-RegularItalic-Trial.ddb8880b48b081819d1c.otf",
+    "static/media/Graphik-Regular-Trial.otf": "/CEF-react-trouvetonartisan/static/media/Graphik-Regular-Trial.e7f4046c1937c259c933.otf",
+    "static/media/Poppins-Bold.woff": "/CEF-react-trouvetonartisan/static/media/Poppins-Bold.d43f2660fae51d565685.woff",
+    "static/media/Graphik-Bold-Trial.woff": "/CEF-react-trouvetonartisan/static/media/Graphik-Bold-Trial.00fe7eace77831e75119.woff",
+    "static/media/Graphik-RegularItalic-Trial.woff": "/CEF-react-trouvetonartisan/static/media/Graphik-RegularItalic-Trial.f254821a9a0c77244cdb.woff",
+    "static/media/Graphik-Regular-Trial.woff": "/CEF-react-trouvetonartisan/static/media/Graphik-Regular-Trial.510c03fcd932bb962bc5.woff",
+    "index.html": "/CEF-react-trouvetonartisan/index.html",
+    "main.e084a795.css.map": "/CEF-react-trouvetonartisan/static/css/main.e084a795.css.map",
+    "main.f796be3b.js.map": "/CEF-react-trouvetonartisan/static/js/main.f796be3b.js.map",
+    "488.843bdefa.chunk.js.map": "/CEF-react-trouvetonartisan/static/js/488.843bdefa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e084a795.css",
+    "static/js/main.f796be3b.js"
+  ]
+}
